@@ -26,7 +26,7 @@
         }
     </script>
     <!-- Google Fonts (Inter) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -58,12 +58,39 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-6">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div class="flex items-center gap-4">
-                    <!-- BCPFFA Logo Container with fallback -->
-                    <div class="bg-white p-1.5 rounded-2xl shadow-md shrink-0 border border-emerald-500/10">
-                        <div class="h-14 w-14 bg-emerald-600 text-white font-black rounded-xl flex flex-col items-center justify-center text-xs tracking-tighter text-center leading-none">
-                            <span class="text-emerald-100 text-[10px]">BCP</span>
-                            <span class="text-white text-lg">FFA</span>
-                        </div>
+                    <!-- BCPFFA Logo Container with premium Maltese Cross vector logo -->
+                    <div class="bg-white p-1.5 rounded-2xl shadow-md shrink-0 border border-emerald-500/10 flex items-center justify-center min-w-[64px] min-h-[64px]">
+                        <img id="header-logo-img" src="BCPFFA.jpg" alt="BCPFFA Logo" class="h-14 w-14 object-contain rounded-xl" onerror="this.style.display='none'; document.getElementById('header-logo-svg').classList.remove('hidden');" />
+                        <svg id="header-logo-svg" class="h-14 w-14 drop-shadow hidden" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background Shield -->
+                            <rect width="100" height="100" rx="20" fill="#065f46" />
+                            <circle cx="50" cy="50" r="46" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2 2" />
+                            
+                            <!-- Crossed Axes (Golden Fire Axes) -->
+                            <path d="M22 78 L78 22 M78 22 L72 16 L66 22 M22 78 L28 84 L34 78" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" />
+                            <path d="M78 78 L22 22 M22 22 L16 28 L22 34 M78 78 L84 72 L78 66" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" />
+                            
+                            <!-- Maltese Cross Body -->
+                            <g filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.3))">
+                                <path d="M50 32 L36 14 C43 12 57 12 64 14 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round" />
+                                <path d="M50 68 L36 86 C43 88 57 88 64 86 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round" />
+                                <path d="M32 50 L14 36 C12 43 12 57 14 64 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round" />
+                                <path d="M68 50 L86 36 C88 43 88 57 86 64 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round" />
+                                <circle cx="50" cy="50" r="18" fill="#b91c1c" stroke="#fbbf24" stroke-width="2" />
+                            </g>
+                            
+                            <!-- Central Gold Crest with Canadian Maple Leaf -->
+                            <circle cx="50" cy="50" r="13" fill="#fbbf24" />
+                            <path d="M50 41 C49 44 45 44 46 47 C44 46 42 47 43 49 C41 48 39 50 41 52 C43 52 45 51 46 53 C44 54 44 56 47 55 C47 57 48 59 50 60 C52 59 53 57 53 55 C56 56 56 54 54 53 C55 51 57 52 59 52 C61 50 59 48 57 49 C58 47 56 46 54 47 C55 44 51 44 50 41 Z" fill="#b91c1c" />
+                            <!-- Leaf Stem -->
+                            <path d="M50 59 L50 63" stroke="#b91c1c" stroke-width="1.5" stroke-linecap="round" />
+                            
+                            <!-- Maltese Cross Text Labels (B - C - P - F - F - A) -->
+                            <text x="50" y="24" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle" letter-spacing="0.5">BC</text>
+                            <text x="50" y="81" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">A</text>
+                            <text x="22" y="53" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">PF</text>
+                            <text x="78" y="53" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">FA</text>
+                        </svg>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
@@ -101,42 +128,66 @@
     <section class="max-w-7xl mx-auto px-4 md:px-6 -mt-4 relative z-20 w-full">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             
-            <!-- Metric Tab 1: OAS -->
-            <button id="metric-card-oas" onclick="switchTab('cpp', 'oas')" class="bg-white p-5 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-center text-left transition hover:-translate-y-1 duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 w-full relative group min-h-[112px]">
-                <span class="text-sm md:text-base font-black text-slate-500 group-hover:text-emerald-600 uppercase tracking-wider transition duration-150 flex flex-col gap-1.5 leading-snug">
-                    <span class="text-xl">🏛️</span>
-                    <span>Public Pension<br/>(CPP & OAS)</span>
-                </span>
+            <!-- Metric Tab 1: Public Pension -->
+            <button id="metric-card-oas" onclick="switchTab('cpp', 'oas')" class="bg-white border-2 border-slate-100 hover:border-emerald-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full shadow-sm">
+                <div class="flex justify-between items-start w-full">
+                    <div id="icon-container-oas" class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-slate-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32" class="w-9 h-6 rounded shadow-sm border border-slate-200 object-cover shrink-0">
+                            <rect width="64" height="32" fill="#da291c" />
+                            <rect x="16" width="32" height="32" fill="#ffffff" />
+                            <path fill="#da291c" d="M32,5.2 c-0.6,1.4 -1,3.4 -0.6,4.7 c-0.6,-0.3 -1.8,-0.1 -2.5,0.4 c-1.1,-1 -2.2,-1.3 -3.4,-0.6 c0.3,1.3 0.8,2.7 1.7,3.6 c-1,-0.3 -2.2,0.2 -2.6,1 c-1,-0.4 -2,0 -2.4,0.9 c0.7,0.7 1.6,1 2.5,0.9 c-1.2,0.8 -1.2,1.9 -0.6,2.7 c0.1,1.1 0.7,2.1 1.6,2.8 c-0.6,-0.1 -1.4,0 -2,0.4 c0.5,1.2 1.6,2 2.8,2.2 c-0.8,0.7 -1.2,1.7 -1.1,2.7 c1.2,-0.2 2.3,-0.9 3,-1.9 c1,-0.4 2.1,-1 2.8,-1.8 c0,0.6 0.1,1.3 0.3,1.8 c-0.8,0.3 -1.5,0.9 -1.9,1.7 c1,0.2 2.1,-0.1 2.8,-0.7 c0.3,0.7 0.8,1.4 1.5,1.7 c-0.4,1 -0.5,2.1 -0.3,3.1 c0.7,-0.7 1,-1.6 1,-2.5 c0,-0.3 0.1,-0.5 0.2,-0.8 l0.5,5.2 h1 l0.5,-5.2 c0.1,0.3 0.2,0.5 0.2,0.8 c0,0.9 0.3,1.8 1,2.5 c0.2,-1.1 0.1,-2.1 -0.3,-3.1 c0.7,-0.3 1.2,-1 1.5,-1.7 c0.7,0.6 1.8,0.9 2.8,0.7 c-0.4,-0.8 -1.1,-1.4 -1.9,-1.7 c0.2,-0.5 0.3,-1.2 0.3,-1.8 c0.7,0.8 1.8,1.4 2.8,1.8 c0.7,1 1.8,1.7 3,1.9 c0.1,-1 -0.3,-2 -1.1,-2.7 c1.2,-0.2 2.3,-1 2.8,-2.2 c-0.6,-0.4 -1.4,-0.5 -2,-0.4 c0.9,-0.7 1.5,-1.7 1.6,-2.8 c0.6,-0.8 0.6,-1.9 -0.6,-2.7 c0.9,0.1 1.8,-0.2 2.5,-0.9 c-0.4,-0.9 -1.4,-1.3 -2.4,-0.9 c-0.4,-0.8 -1.6,-1.3 -2.6,-1 c0.9,-0.9 1.4,-2.3 1.7,-3.6 c-1.2,-0.7 -2.3,-0.4 -3.4,0.6 c-0.7,-0.5 -1.9,-0.7 -2.5,-0.4 c0.4,-1.3 0,-3.3 -0.6,-4.7 L32,5.2 z" />
+                        </svg>
+                    </div>
+                    <span id="badge-oas" class="text-[9px] font-black tracking-wider text-slate-400 bg-slate-100 border border-transparent px-2.5 py-1 rounded-full uppercase transition-all duration-300">
+                        Click to View
+                    </span>
+                </div>
+                <div class="mt-4">
+                    <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase block mb-1">Schedules &amp; Rates</span>
+                    <span class="text-base font-black text-slate-800 group-hover:text-emerald-700 transition-colors duration-200 leading-tight block">
+                        Public Pension (CPP &amp; OAS)
+                    </span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
             </button>
 
-            <!-- Metric Tab 3: YMPE (Replaced with Retirement Stack) -->
-            <button id="metric-card-ympe" onclick="switchTab('pension-map', 'ympe')" class="bg-white p-5 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-center text-left transition hover:-translate-y-1 duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 w-full relative group min-h-[112px]">
-                <div class="absolute top-4 right-4 flex items-center gap-1 opacity-0 group-[.active-card]:opacity-100 transition-opacity duration-200">
-                    <span class="text-[8px] font-bold tracking-wider text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-full uppercase">Stack Map</span>
-                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+            <!-- Metric Tab 2: Retirement Stack -->
+            <button id="metric-card-ympe" onclick="switchTab('pension-map', 'ympe')" class="bg-white border-2 border-slate-100 hover:border-indigo-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full shadow-sm">
+                <div class="flex justify-between items-start w-full">
+                    <div id="icon-container-ympe" class="w-12 h-12 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-indigo-50 group-hover:text-indigo-600">📊</div>
+                    <span id="badge-ympe" class="text-[9px] font-black tracking-wider text-slate-400 bg-slate-100 border border-transparent px-2.5 py-1 rounded-full uppercase transition-all duration-300">
+                        Click to View
+                    </span>
                 </div>
-                <span class="text-sm md:text-base font-black text-slate-500 group-hover:text-indigo-600 uppercase tracking-wider transition duration-150 flex flex-col gap-1.5 leading-snug">
-                    <span class="text-xl">📊</span>
-                    <span>Retirement Stack<br/>(Integration Map)</span>
-                </span>
+                <div class="mt-4">
+                    <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase block mb-1">Integration Timeline</span>
+                    <span class="text-base font-black text-slate-800 group-hover:text-indigo-700 transition-colors duration-200 leading-tight block">
+                        Retirement Stack
+                    </span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
             </button>
 
-            <!-- Metric Tab 4: RRSP -->
-            <button id="metric-card-rrsp" onclick="switchTab('tax-infographic', 'rrsp')" class="bg-white p-5 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-center text-left transition hover:-translate-y-1 duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 w-full relative group min-h-[112px]">
-                <div class="absolute top-4 right-4 flex items-center gap-1 opacity-0 group-[.active-card]:opacity-100 transition-opacity duration-200">
-                    <span class="text-[8px] font-bold tracking-wider text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full uppercase">Tax Shield</span>
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <!-- Metric Tab 3: Interactive Tax Visualizer -->
+            <button id="metric-card-rrsp" onclick="switchTab('tax-infographic', 'rrsp')" class="bg-white border-2 border-slate-100 hover:border-teal-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full shadow-sm">
+                <div class="flex justify-between items-start w-full">
+                    <div id="icon-container-rrsp" class="w-12 h-12 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-teal-50 group-hover:text-teal-600">📈</div>
+                    <span id="badge-rrsp" class="text-[9px] font-black tracking-wider text-slate-400 bg-slate-100 border border-transparent px-2.5 py-1 rounded-full uppercase transition-all duration-300">
+                        Click to View
+                    </span>
                 </div>
-                <span class="text-sm md:text-base font-black text-slate-500 group-hover:text-emerald-700 uppercase tracking-wider transition duration-150 flex flex-col gap-1.5 leading-snug">
-                    <span class="text-xl">📈</span>
-                    <span>Interactive Tax &amp;<br/>Pension Visualizer</span>
-                </span>
+                <div class="mt-4">
+                    <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase block mb-1">Tax Shield Simulator</span>
+                    <span class="text-base font-black text-slate-800 group-hover:text-teal-700 transition-colors duration-200 leading-tight block">
+                        Interactive Tax &amp; Pension Visualizer
+                    </span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
             </button>
 
         </div>
     </section>
 
-    <!-- Main Content Container ... -->
     <!-- Main Content Container -->
     <main class="max-w-7xl mx-auto px-4 md:px-6 py-10 flex-grow w-full">
         
@@ -234,7 +285,7 @@
                             <span>🛡️</span> Pension Deduction Rules
                         </h4>
                         <div class="bg-amber-50 border border-amber-100 text-amber-800 rounded-xl p-4 text-xs space-y-2 mb-3 leading-relaxed">
-                            <p class="font-bold">No. Passive Pension Income is 100% Exempt:</p>
+                            <p class="font-bold">Note: Passive Pension Income is 100% Exempt:</p>
                             <p class="font-light text-slate-600">CPP and EI premiums are <strong>never</strong> deducted from passive retirement income, including CPP benefits, OAS, GIS, or private/corporate pension payouts.</p>
                         </div>
                         <p class="text-xs text-slate-700 font-semibold mb-2">
@@ -369,6 +420,13 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Bold Custom Quote Block -->
+            <div class="mt-8 p-5 bg-slate-100/60 border border-slate-200/80 rounded-2xl text-center shadow-sm">
+                <p class="text-sm md:text-base text-emerald-800 font-extrabold italic tracking-wide">
+                    "I'm more concerned about my best 5 off the job than on the job"
+                </p>
+            </div>
         </div>
 
         <!-- TAB 3: Interactive Tax Infographic -->
@@ -485,7 +543,7 @@
                                 <!-- Net Pay -->
                                 <div class="flex items-center justify-between p-3 rounded-xl bg-emerald-50 border border-emerald-100 hover:bg-emerald-100/50 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
-                                        <div class="w-3 h-3 rounded bg-emerald-500 shadow-sm shadow-emerald-500/25"></div>
+                                        <div class="w-3.5 h-3.5 rounded bg-emerald-500 shadow-sm shadow-emerald-500/25"></div>
                                         <span class="text-slate-700 text-[11px] font-bold">Take-home Pay</span>
                                     </div>
                                     <div class="text-right">
@@ -497,7 +555,7 @@
                                 <!-- Employee RPP Savings Row -->
                                 <div class="flex items-center justify-between p-3 rounded-xl bg-purple-50 border border-purple-100 hover:bg-purple-100/30 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
-                                        <div class="w-3 h-3 rounded bg-purple-500 shadow-sm shadow-purple-500/25"></div>
+                                        <div class="w-3.5 h-3.5 rounded bg-purple-500 shadow-sm shadow-purple-500/25"></div>
                                         <span class="text-slate-700 text-[11px] font-bold">Employee RPP Savings</span>
                                     </div>
                                     <div class="text-right">
@@ -509,7 +567,7 @@
                                 <!-- Employer RRSP Savings Row -->
                                 <div class="flex items-center justify-between p-3 rounded-xl bg-fuchsia-50 border border-fuchsia-100 hover:bg-fuchsia-100/30 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
-                                        <div class="w-3 h-3 rounded bg-fuchsia-50 shadow-sm shadow-fuchsia-500/25"></div>
+                                        <div class="w-3.5 h-3.5 rounded bg-fuchsia-50 shadow-sm shadow-fuchsia-500/25"></div>
                                         <span class="text-slate-700 text-[11px] font-bold">Employer RRSP Savings</span>
                                     </div>
                                     <div class="text-right">
@@ -523,20 +581,20 @@
                                     <div class="flex items-center gap-2.5">
                                         <span class="text-base">🎉</span>
                                         <div>
-                                            <span class="text-teal-700 text-xs font-bold block leading-none">Instant Tax Savings</span>
-                                            <span class="text-[9px] text-teal-600 block mt-1">Combined RPP &amp; RRSP Tax Shield</span>
+                                            <span class="text-teal-700 text-xs font-bold block leading-none">Instant Tax Shield Savings</span>
+                                            <span class="text-[9px] text-teal-600 block mt-1">Employee RPP Shield</span>
                                         </div>
                                     </div>
                                     <div class="text-right">
                                         <div id="info-val-tax-savings" class="font-black text-teal-600 text-sm leading-none">$0.00</div>
-                                        <div class="text-[9px] text-teal-500 font-semibold mt-1">Instant Refund Value</div>
+                                        <div class="text-[9px] text-teal-500 font-semibold mt-1">Immediate Refund Value</div>
                                     </div>
                                 </div>
 
                                 <!-- Federal Tax -->
                                 <div class="flex items-center justify-between p-3 rounded-xl bg-indigo-50 border border-indigo-100 hover:bg-indigo-100/50 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
-                                        <div class="w-3 h-3 rounded bg-indigo-500 shadow-sm shadow-indigo-500/25"></div>
+                                        <div class="w-3.5 h-3.5 rounded bg-indigo-500 shadow-sm shadow-indigo-500/25"></div>
                                         <span class="text-slate-700 text-[11px]">Federal Income Tax</span>
                                     </div>
                                     <div class="text-right">
@@ -548,7 +606,7 @@
                                 <!-- BC Tax -->
                                 <div class="flex items-center justify-between p-3 rounded-xl bg-sky-50 border border-sky-100 hover:bg-sky-100/50 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
-                                        <div class="w-3 h-3 rounded bg-sky-500 shadow-sm shadow-sky-500/25"></div>
+                                        <div class="w-3.5 h-3.5 rounded bg-sky-500 shadow-sm shadow-sky-500/25"></div>
                                         <span class="text-slate-700 text-[11px]">BC Income Tax</span>
                                     </div>
                                     <div class="text-right">
@@ -560,7 +618,7 @@
                                 <!-- CPP Deductions -->
                                 <div class="flex items-center justify-between p-3 rounded-xl bg-amber-50 border border-amber-100 hover:bg-amber-100/50 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
-                                        <div class="w-3 h-3 rounded bg-amber-500 shadow-sm shadow-amber-500/25"></div>
+                                        <div class="w-3.5 h-3.5 rounded bg-amber-500 shadow-sm shadow-amber-500/25"></div>
                                         <div>
                                             <span class="text-slate-700 text-[11px] font-semibold block">CPP &amp; CPP2</span>
                                             <span id="info-cpp2-badge" class="hidden text-[8px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-black uppercase tracking-wider mt-0.5 border border-amber-200">
@@ -577,7 +635,7 @@
                                 <!-- EI Deductions -->
                                 <div class="flex items-center justify-between p-3 rounded-xl bg-rose-50 border border-rose-100 hover:bg-rose-100/50 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
-                                        <div class="w-3 h-3 rounded bg-rose-500 shadow-sm shadow-rose-500/25"></div>
+                                        <div class="w-3.5 h-3.5 rounded bg-rose-500 shadow-sm shadow-rose-500/25"></div>
                                         <span class="text-slate-700 text-[11px]">Employment Insurance</span>
                                     </div>
                                     <div class="text-right">
@@ -588,165 +646,190 @@
                             </div>
 
                             <!-- Summary -->
-                            <div class="mt-4 pt-4 border-t border-slate-200 text-slate-500 text-[11px] flex justify-between font-bold">
-                                <span>Total Combined Deductions:</span>
-                                <span id="info-val-total-deductions" class="text-slate-800 font-mono">$0.00</span>
+                            <div class="mt-4 pt-4 border-t border-slate-200 text-slate-500 text-[11px] flex flex-col gap-2 font-bold">
+                                <div class="flex justify-between">
+                                    <span>Total Outflows &amp; Employee RPP:</span>
+                                    <span id="info-val-total-deductions" class="text-slate-800 font-mono">$0.00</span>
+                                </div>
+                                <div class="flex justify-between border-t border-slate-100 pt-2 text-emerald-700">
+                                    <span>Total Compensation (Salary + Employer Match):</span>
+                                    <span id="info-val-total-compensation" class="font-mono font-black">$0.00</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- RIGHT COLUMN: Progressive Brackets Visualizer -->
+                <!-- RIGHT COLUMN: Progressive Brackets Visual Stack (lg:col-span-8) -->
                 <div class="lg:col-span-8 flex flex-col gap-6">
-                    
-                    <!-- Section Selector -->
+                    <!-- Interactive Progressive Brackets Card -->
                     <div class="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-md">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-200 pb-4 mb-6">
-                            <div>
-                                <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
-                                    <span class="text-emerald-600">03.</span> Interactive Progressive Brackets (FY 2026)
-                                </h2>
-                                <p class="text-slate-500 text-xs mt-0.5">
-                                    Understand how tax brackets stack like buckets. You only pay higher rates on money inside that specific bucket!
-                                </p>
-                            </div>
+                          <div>
+                            <h3 class="font-bold text-base text-slate-800 flex items-center gap-2">
+                              <span class="w-6 h-6 rounded-lg bg-emerald-50 border border-emerald-100 text-emerald-600 font-extrabold flex items-center justify-center text-xs">03</span>
+                              Interactive Progressive Brackets
+                            </h3>
+                            <p class="text-slate-500 text-xs mt-0.5">
+                              Understand how tax brackets stack. You only pay higher rates on money inside that specific bracket!
+                            </p>
+                          </div>
 
-                            <!-- Tab Switchers -->
-                            <div class="flex bg-slate-100 border border-slate-200 p-1 rounded-xl w-full sm:w-auto">
-                                <button
-                                    onclick="setInfoActiveTab('federal')"
-                                    id="info-tab-btn-federal"
-                                    class="flex-1 sm:flex-none px-4 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-sm"
-                                >
-                                    Federal Taxes
-                                </button>
-                                <button
-                                    onclick="setInfoActiveTab('bc')"
-                                    id="info-tab-btn-bc"
-                                    class="flex-1 sm:flex-none px-4 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-500 hover:text-slate-700"
-                                >
-                                    BC Taxes
-                                </button>
-                            </div>
+                          <!-- Tab Toggles (Federal vs BC) -->
+                          <div class="flex bg-slate-100 p-1 rounded-xl w-full sm:w-auto border border-slate-200/40">
+                            <button
+                              id="info-tab-btn-federal"
+                              onClick="setInfoActiveTab('federal')"
+                              class="flex-1 sm:flex-none px-4 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-sm"
+                            >
+                              Federal Brackets
+                            </button>
+                            <button
+                              id="info-tab-btn-bc"
+                              onClick="setInfoActiveTab('bc')"
+                              class="flex-1 sm:flex-none px-4 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-500 hover:text-slate-700"
+                            >
+                              BC Provincial
+                            </button>
+                          </div>
                         </div>
 
-                        <!-- Brackets Stack visualization container -->
-                        <div class="space-y-4" id="info-brackets-container">
-                            <!-- Populated Dynamically via JavaScript -->
+                        <!-- Brackets Container where JS injects dynamic cards -->
+                        <div id="info-brackets-container" class="space-y-4">
+                          <!-- Dynamically populated by JS updateTaxInfographicUI() -->
                         </div>
 
                         <!-- Non-Refundable Credits (BPA) explanation -->
-                        <div class="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start gap-3">
-                            <span class="text-emerald-600 text-sm">💡</span>
-                            <div>
-                                <strong class="text-slate-800 block mb-1">Basic Personal Amount (BPA) Dynamic Rebate:</strong>
-                                This scenario evaluates a federal BPA credit calculated up to a maximum baseline of <span class="text-indigo-600 font-bold" id="info-label-bpa-val">$16,452</span>. 
-                                It functions as a **0% tax bracket**, shaving off federal taxes up to the first rate band dynamically.
-                            </div>
+                        <div class="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-600 flex items-start gap-3">
+                          <span class="text-emerald-600 text-base">💡</span>
+                          <div>
+                            <strong class="text-slate-800 block mb-1">How the Basic Personal Amount (BPA) saves you taxes:</strong>
+                            The Basic Personal Amount acts as a **0% tax bracket**. The calculations apply this rebate dynamically, reducing your final taxes.
+                            <span class="block mt-1 font-semibold text-indigo-700">Your Current 2026 Federal BPA: <span id="info-label-bpa-val">$0.00</span></span>
+                          </div>
                         </div>
                     </div>
 
-                    <!-- Payroll Premiums limits visualizers -->
+                    <!-- Payroll Deductions Breakdown Card -->
                     <div class="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-md">
-                        <h2 class="text-base font-bold text-slate-800 mb-4 flex items-center gap-2">
-                            <span class="text-emerald-600">04.</span> Payroll Deductions Breakdown (2026 Caps)
-                        </h2>
-                        
+                        <h3 class="font-bold text-base text-slate-800 mb-2 flex items-center gap-2">
+                          <span class="w-6 h-6 rounded-lg bg-emerald-50 border border-emerald-100 text-emerald-600 font-extrabold flex items-center justify-center text-xs">04</span>
+                          Payroll Deductions Breakdown (2026 Rules)
+                        </h3>
+                        <p class="text-slate-500 text-xs mb-6">
+                          CPP and EI premiums stop being deducted once you reach their respective annual income caps.
+                        </p>
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- CPP Box -->
-                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 relative overflow-hidden">
-                                <h3 class="text-xs font-bold text-slate-600 mb-2">CPP &amp; CPP2 Premium Limits</h3>
-                                
-                                <div class="space-y-4 text-[11px] mt-4">
-                                    <div>
-                                        <div class="flex justify-between mb-1 text-slate-500">
-                                            <span>Base CPP (5.95%)</span>
-                                            <span class="font-mono text-slate-700" id="info-meter-cpp1-label">$0.00 / $4,230.45</span>
-                                        </div>
-                                        <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                                            <div id="info-meter-cpp1" class="bg-amber-500 h-full transition-all duration-300" style="width: 0%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between mb-1 text-slate-500">
-                                            <span>CPP2 (4.00% above YMPE to YAMPE)</span>
-                                            <span class="font-mono text-slate-700" id="info-meter-cpp2-label">$0.00 / $416.00</span>
-                                        </div>
-                                        <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                                            <div id="info-meter-cpp2" class="bg-amber-600 h-full transition-all duration-300" style="width: 0%"></div>
-                                        </div>
-                                    </div>
+                          <!-- CPP Box -->
+                          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 relative overflow-hidden">
+                            <h4 class="text-xs font-bold text-slate-700 mb-3">Canada Pension Plan (CPP & CPP2)</h4>
+                            
+                            <div class="space-y-4 text-xs">
+                              <div>
+                                <div class="flex justify-between text-[11px] mb-1">
+                                  <span class="text-slate-500 font-medium">Base CPP (5.95% up to $74.6k)</span>
+                                  <span id="info-meter-cpp1-label" class="font-bold text-slate-700">$0.00 / $4,230.45</span>
                                 </div>
-                            </div>
-
-                            <!-- EI Box -->
-                            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 relative overflow-hidden">
-                                <h3 class="text-xs font-bold text-slate-600 mb-2">Employment Insurance Premiums</h3>
-                                
-                                <div class="space-y-4 text-[11px] mt-4">
-                                    <div>
-                                        <div class="flex justify-between mb-1 text-slate-500">
-                                            <span>EI Standard Contributions (1.63%)</span>
-                                            <span class="font-mono text-slate-700" id="info-meter-ei-label">$0.00 / $1,123.07</span>
-                                        </div>
-                                        <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                                            <div id="info-meter-ei" class="bg-rose-500 h-full transition-all duration-300" style="width: 0%"></div>
-                                        </div>
-                                    </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                  <div id="info-meter-cpp1" class="bg-amber-500 h-full transition-all duration-300" style="width: 0%"></div>
                                 </div>
+                              </div>
+
+                              <div>
+                                <div class="flex justify-between text-[11px] mb-1">
+                                  <span class="text-slate-500 font-medium">CPP2 (4% on $74.6k to $85.0k)</span>
+                                  <span id="info-meter-cpp2-label" class="font-bold text-slate-700">$0.00 / $416.00</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                  <div id="info-meter-cpp2" class="bg-orange-500 h-full transition-all duration-300" style="width: 0%"></div>
+                                </div>
+                              </div>
                             </div>
+                          </div>
+
+                          <!-- EI Box -->
+                          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 relative overflow-hidden">
+                            <h4 class="text-xs font-bold text-slate-700 mb-3">Employment Insurance (EI)</h4>
+
+                            <div class="space-y-4 text-xs">
+                              <div>
+                                <div class="flex justify-between text-[11px] mb-1">
+                                  <span class="text-slate-500 font-medium">EI Premiums (1.63% up to $68.9k)</span>
+                                  <span id="info-meter-ei-label" class="font-bold text-slate-700">$0.00 / $1,123.07</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                  <div id="info-meter-ei" class="bg-rose-500 h-full transition-all duration-300" style="width: 0%"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
     </main>
 
     <!-- Footer Summary Section -->
-    <footer class="bg-white border-t border-slate-200 mt-12 py-8 px-6 text-[11px] text-slate-500">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h5 class="font-bold text-slate-700 uppercase mb-3">Resource Index</h5>
-                <ul class="space-y-2 leading-relaxed">
-                    <li><strong class="text-slate-600">Federal Benefits (OAS/GIS/CPP):</strong> Visit <a href="http://www.esdc.gc.ca/en/pension/index.page" target="_blank" class="text-emerald-600 hover:underline">ESDC Canada Online</a> or dial 1-800-622-6232.</li>
-                </ul>
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-12 px-4 md:px-6 relative z-10 text-xs">
+        <div class="max-w-7xl mx-auto space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800/80">
+                <div>
+                    <h5 class="text-slate-200 font-bold mb-3 text-sm">CRA Reference Guidelines</h5>
+                    <p class="font-light leading-relaxed">
+                        This summary has been compiled directly using indexing projections for the 2026 taxation year. Tax thresholds, CPP maximum pensionable earnings (YMPE), and basic personal credits are estimated based on public treasury models.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-slate-200 font-bold mb-3 text-sm">Corporate Coordination</h5>
+                    <p class="font-light leading-relaxed">
+                        Defined Benefit (DB) pension schemes in BC coordinate closely with public programs. The Bridge Benefit and Temporary Annuity programs are designed to automatically end on the first of the month following your 65th birthday.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-slate-200 font-bold mb-3 text-sm">Professional Advice</h5>
+                    <p class="font-light leading-relaxed">
+                        Although this tool is configured with extreme precision, individual retirement choices should always be made in consultation with a designated pension administrator, tax professional, or a Certified Financial Planner (CFP).
+                    </p>
+                </div>
             </div>
-            <div>
-                <h5 class="font-bold text-slate-700 uppercase mb-3">Glossary Highlights</h5>
-                <p class="leading-relaxed">
-                    <strong>YMPE:</strong> Year's Maximum Pensionable Earnings, standard ceiling defining standard CPP contributory premiums.<br>
-                    <strong>YBE:</strong> Year's Basic Exemption. You do not pay CPP on your first $3,500 of annual earnings.
-                </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500 font-medium">
+                <p>© 2026 BC Professional Fire Fighters Association. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-slate-300 transition-colors">Pension Rules Directory</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-slate-300 transition-colors">CRA T4 Guides</a>
+                </div>
             </div>
-            <div>
-                <h5 class="font-bold text-slate-700 uppercase mb-3">Regulatory Disclaimer</h5>
-                <p class="leading-relaxed">
-                    This visualizer is an educational reference built on standard indexed federal schedules. BCPFFA and partners disclaim all liabilities. Please consult a qualified CPA or credentialed advisor before planning exits.
-                </p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto border-t border-slate-200 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px]">
-            <p>© 2026 British Columbia Professional Fire Fighters Association. All rights reserved.</p>
-            <p>Interactive Infographic Build: v3.7.0 (Metric Tab Integrated)</p>
         </div>
     </footer>
 
-    <!-- Toast Notification System Overlay -->
-    <div id="toast-notification" class="fixed bottom-5 right-5 z-50 transform translate-y-10 opacity-0 pointer-events-none transition-all duration-300 bg-slate-900 text-white text-xs font-semibold px-4 py-3 rounded-xl shadow-xl border border-slate-800 flex items-center gap-2">
-        <span class="text-amber-400">⚠️</span>
-        <span id="toast-text"></span>
+    <!-- Custom Toast Notification Container -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 bg-slate-900 border border-emerald-800 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 max-w-sm translate-y-10 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0">
+            ✓
+        </div>
+        <div>
+            <p class="font-bold text-xs text-slate-100">Action Complete</p>
+            <p id="toast-text" class="text-[10px] text-slate-400 mt-0.5 leading-tight">Data synchronized successfully!</p>
+        </div>
     </div>
 
-    <!-- Interactive Logic Script -->
+    <!-- JAVASCRIPT LOGIC & TAX EQUATION ENGINE -->
     <script>
-        // Layer Data definitions for Retirement Stack Map Inspector
+        // Calculations Pipeline Global State
         let info_income = 75000;
         let info_employee_rpp = 0;
         let info_employer_rrsp = 0;
-        let info_activeTab = 'federal';
+        let info_activeTab = 'federal'; // 'federal' or 'bc'
 
+        // Constants Map aligned with 2026 limits
         const CONSTANTS_INFO = {
             federalBrackets: [
                 { limit: 58523, rate: 0.14, label: 'First Bracket' },
@@ -759,6 +842,7 @@
             fedBPA_min: 14829,
             fedClawbackStart: 181440,
             fedClawbackEnd: 258482,
+
             bcBrackets: [
                 { limit: 50363, rate: 0.056, label: 'First Bracket' },
                 { limit: 100728, rate: 0.077, label: 'Second Bracket' },
@@ -769,13 +853,16 @@
                 { limit: Infinity, rate: 0.205, label: 'Seventh Bracket' }
             ],
             bcBPA: 13216,
+
             cppExemption: 3500,
-            cppLimit1: 74600,
-            cppLimit2: 85000,
-            cppRate1: 0.0595,
-            cppRate2: 0.0400,
+            cppLimit1: 74600, // YMPE
+            cppLimit2: 85000, // YAMPE
+            cppRate1: 0.0595, 
+            cppRate2: 0.0400, 
             maxCpp1: 4230.45,
             maxCpp2: 416.00,
+
+            eiLimit: 68900,
             eiRate: 0.0163,
             maxEi: 1123.07
         };
@@ -783,32 +870,29 @@
         const LAYER_DATA = {
             'cpp-reduced': {
                 title: "Canada Pension Plan (Reduced)",
-                timeline: "From Retirement Age (60 to 65) | Ends at 65",
+                timeline: "From Age 60 to Age 65 | Reduced Continuous Value",
                 category: "Public Government Benefit",
-                color: "bg-sky-50 text-sky-700 border border-sky-100",
+                color: "bg-sky-50 text-sky-800 border border-sky-100",
                 desc: `
-                    <p class="mb-2">If you choose to receive your Canada Pension Plan (CPP) early (prior to age 65), your monthly pension amount is permanently reduced by <strong>0.6% for each month</strong> (or 7.2% per year) you receive it early.</p>
-                    <div class="border-l-2 border-amber-500 pl-3 py-1 bg-amber-50/50 rounded-r-xl my-2">
-                        <strong class="text-amber-800 text-xs">Maximum Reduction Penalty:</strong>
-                        <p class="text-xs text-amber-900">If started exactly at age 60, the reduction penalty is <strong>36%</strong>, lowering the 2026 maximum payout from $1,507.65/mo to <strong>$964.90/mo</strong>.</p>
-                    </div>
-                    <p class="text-[11px] text-slate-500 mt-2"><strong>Coordination Rule:</strong> Taking reduced CPP early does *not* increase your corporate bridge benefit. It stays active until 65, but your CPP remains permanently reduced after the bridge drops off at 65.</p>
+                    <p class="mb-2">If chosen to begin at age 60, the standard unreduced pension benefit is permanently reduced by 0.6% per month (a maximum standard reduction of <strong>36%</strong>) compared to age 65.</p>
+                    <p class="mb-2">This is designed to balance the unreduced actuarial calculations of lifetime payout. For 2026, the absolute maximum early monthly benefit is capped at <strong>$964.90/month</strong>.</p>
+                    <p class="text-[11px] text-slate-500">Note: CPP benefits are indexed annually based on CPI factors.</p>
                 `
             },
             'cpp-unreduced': {
                 title: "Canada Pension Plan (CPP)",
-                timeline: "From Age 65 | Continuous through Life",
+                timeline: "From Age 65 | Lifetime unreduced standard",
                 category: "Public Government Benefit",
                 color: "bg-sky-600 text-white",
                 desc: `
-                    <p class="mb-2">The standard public pension plan funded by contributory employment earnings. Under the 2026 guidelines in <strong>Saverio's files</strong>, the unreduced maximum monthly payout starting at age 65 is <strong>$1,507.65</strong>.</p>
-                    <p class="mb-2"><strong>Coordination Impact:</strong> When unreduced CPP starts at age 65, most employer-sponsored Defined Benefit (DB) pension plans automatically terminate their temporary 'Bridge Benefits' to avoid duplicate income lines.</p>
-                    <p class="text-[11px] text-slate-500">Note: CPP increases periodically to match inflation adjustments (CPI).</p>
+                    <p class="mb-2">The standard, unreduced public pension benefit. Designed to replace approximately 25% to 33% of indexed historical pensionable earnings.</p>
+                    <p class="mb-2">For 2026, the absolute maximum monthly benefit stands at <strong>$1,507.65/month</strong>. To qualify for this maximum, a member must have contributed on earnings matching the YMPE ceiling for at least 39 years.</p>
+                    <p class="text-[11px] text-slate-500">Can be postponed up to age 70 for an unreduced premium increase of 8.4% per year (maximum +42%).</p>
                 `
             },
             'bridge': {
-                title: "Bridge Benefit",
-                timeline: "From Retirement Age (RA) | Ends exactly at Age 65",
+                title: "Bridge Benefit (Temporary Offset)",
+                timeline: "From Retirement Age (RA) | Terminates at Age 65",
                 category: "MPP Pension Plan",
                 color: "bg-emerald-50 text-emerald-800 border border-emerald-100",
                 desc: `
@@ -993,8 +1077,9 @@
 
         // Calculation Pipeline Core
         function runTaxCalculationScenario(scenIncome, scenEmployeeRPP, scenEmployerRRSP) {
-            const totalPension = scenEmployeeRPP + scenEmployerRRSP;
-            const netTaxableIncome = Math.max(0, scenIncome - totalPension);
+            // Employer-paid pension contributions (scenEmployerRRSP) are paid IN ADDITION to gross pay.
+            // Therefore, only the Employee's RPP contributions are a deduction that reduces current base taxable income.
+            const netTaxableIncome = Math.max(0, scenIncome - scenEmployeeRPP);
 
             // CPP/CPP2 calculations
             let cpp1 = 0;
@@ -1120,34 +1205,38 @@
             const actual = runTaxCalculationScenario(info_income, info_employee_rpp, info_employer_rrsp);
             const baseline = runTaxCalculationScenario(info_income, 0, 0);
 
-            // Tax savings calculation
+            // Tax savings calculation (employer paid does not lower taxable income below gross, so shield comes from employee portion)
             const taxSavings = Math.max(0, baseline.totalDeductions - actual.totalDeductions);
-            const totalPension = info_employee_rpp + info_employer_rrsp;
-            const netIncome = Math.max(0, info_income - actual.totalDeductions - totalPension);
+            
+            // Take-home cash pay is base salary minus taxes, mandatory limits, and employee savings (RPP)
+            const netIncome = Math.max(0, info_income - actual.finalFedTax - actual.finalBcTax - actual.totalCpp - actual.totalEi - info_employee_rpp);
+            
+            // Total compensation represents base salary plus employer top-up contribution
+            const totalComp = info_income + info_employer_rrsp;
 
-            // Update Net Pay values safely
+            // Update Net Pay values safely against Total Compensation
             const netVal = document.getElementById('info-val-net');
             const netPct = document.getElementById('info-pct-net');
             if (netVal) netVal.innerText = formatCurrency(netIncome);
-            if (netPct) netPct.innerText = info_income > 0 ? ((netIncome / info_income) * 100).toFixed(2) + '%' : '0.00%';
+            if (netPct) netPct.innerText = totalComp > 0 ? ((netIncome / totalComp) * 100).toFixed(2) + '%' : '0.00%';
 
             // Update Employee RPP values
             const rppVal = document.getElementById('info-val-employee-rpp');
             const rppPct = document.getElementById('info-pct-employee-rpp');
             if (rppVal) rppVal.innerText = formatCurrency(info_employee_rpp);
-            if (rppPct) rppPct.innerText = info_income > 0 ? ((info_employee_rpp / info_income) * 100).toFixed(2) + '%' : '0.00%';
+            if (rppPct) rppPct.innerText = totalComp > 0 ? ((info_employee_rpp / totalComp) * 100).toFixed(2) + '%' : '0.00%';
 
             // Update Employer RRSP values
             const rrspVal = document.getElementById('info-val-employer-rrsp');
             const rrspPct = document.getElementById('info-pct-employer-rrsp');
             if (rrspVal) rrspVal.innerText = formatCurrency(info_employer_rrsp);
-            if (rrspPct) rrspPct.innerText = info_income > 0 ? ((info_employer_rrsp / info_income) * 100).toFixed(2) + '%' : '0.00%';
+            if (rrspPct) rrspPct.innerText = totalComp > 0 ? ((info_employer_rrsp / totalComp) * 100).toFixed(2) + '%' : '0.00%';
 
             // Update Tax Savings box visibility
             const savingsCard = document.getElementById('info-tax-savings-card');
             const savingsVal = document.getElementById('info-val-tax-savings');
             if (savingsCard && savingsVal) {
-                if (totalPension > 0 && taxSavings > 0) {
+                if (info_employee_rpp > 0 && taxSavings > 0) {
                     savingsCard.classList.remove('hidden');
                     savingsVal.innerText = formatCurrency(taxSavings);
                 } else {
@@ -1159,19 +1248,19 @@
             const fedVal = document.getElementById('info-val-fed');
             const fedPct = document.getElementById('info-pct-fed');
             if (fedVal) fedVal.innerText = formatCurrency(actual.finalFedTax);
-            if (fedPct) fedPct.innerText = info_income > 0 ? ((actual.finalFedTax / info_income) * 100).toFixed(2) + '%' : '0.00%';
+            if (fedPct) fedPct.innerText = totalComp > 0 ? ((actual.finalFedTax / totalComp) * 100).toFixed(2) + '%' : '0.00%';
 
             // Update BC tax outputs
             const bcVal = document.getElementById('info-val-bc');
             const bcPct = document.getElementById('info-pct-bc');
             if (bcVal) bcVal.innerText = formatCurrency(actual.finalBcTax);
-            if (bcPct) bcPct.innerText = info_income > 0 ? ((actual.finalBcTax / info_income) * 100).toFixed(2) + '%' : '0.00%';
+            if (bcPct) bcPct.innerText = totalComp > 0 ? ((actual.finalBcTax / totalComp) * 100).toFixed(2) + '%' : '0.00%';
 
             // Update CPP outputs
             const cppVal = document.getElementById('info-val-cpp');
             const cppPct = document.getElementById('info-pct-cpp');
             if (cppVal) cppVal.innerText = formatCurrency(actual.totalCpp);
-            if (cppPct) cppPct.innerText = info_income > 0 ? ((actual.totalCpp / info_income) * 100).toFixed(2) + '%' : '0.00%';
+            if (cppPct) cppPct.innerText = totalComp > 0 ? ((actual.totalCpp / totalComp) * 100).toFixed(2) + '%' : '0.00%';
             
             const cpp2Badge = document.getElementById('info-cpp2-badge');
             if (cpp2Badge) {
@@ -1186,11 +1275,15 @@
             const eiVal = document.getElementById('info-val-ei');
             const eiPct = document.getElementById('info-pct-ei');
             if (eiVal) eiVal.innerText = formatCurrency(actual.totalEi);
-            if (eiPct) eiPct.innerText = info_income > 0 ? ((actual.totalEi / info_income) * 100).toFixed(2) + '%' : '0.00%';
+            if (eiPct) eiPct.innerText = totalComp > 0 ? ((actual.totalEi / totalComp) * 100).toFixed(2) + '%' : '0.00%';
 
-            // Total combined deductions
+            // Total combined deductions/outflows
             const totalDed = document.getElementById('info-val-total-deductions');
-            if (totalDed) totalDed.innerText = formatCurrency(actual.totalDeductions + totalPension);
+            if (totalDed) totalDed.innerText = formatCurrency(actual.finalFedTax + actual.finalBcTax + actual.totalCpp + actual.totalEi + info_employee_rpp);
+
+            // Total annual compensation wealth
+            const totalCompEl = document.getElementById('info-val-total-compensation');
+            if (totalCompEl) totalCompEl.innerText = formatCurrency(totalComp);
 
             // Update Visual Stacked Percentage Bar
             const barTakehome = document.getElementById('info-bar-takehome');
@@ -1201,14 +1294,14 @@
             const barCpp = document.getElementById('info-bar-cpp');
             const barEi = document.getElementById('info-bar-ei');
 
-            if (info_income > 0) {
-                if (barTakehome) barTakehome.style.width = ((netIncome / info_income) * 100) + '%';
-                if (barEmployeeRpp) barEmployeeRpp.style.width = ((info_employee_rpp / info_income) * 100) + '%';
-                if (barEmployerRrsp) barEmployerRrsp.style.width = ((info_employer_rrsp / info_income) * 100) + '%';
-                if (barFedTax) barFedTax.style.width = ((actual.finalFedTax / info_income) * 100) + '%';
-                if (barProvTax) barProvTax.style.width = ((actual.finalBcTax / info_income) * 100) + '%';
-                if (barCpp) barCpp.style.width = ((actual.totalCpp / info_income) * 100) + '%';
-                if (barEi) barEi.style.width = ((actual.totalEi / info_income) * 100) + '%';
+            if (totalComp > 0) {
+                if (barTakehome) barTakehome.style.width = ((netIncome / totalComp) * 100) + '%';
+                if (barEmployeeRpp) barEmployeeRpp.style.width = ((info_employee_rpp / totalComp) * 100) + '%';
+                if (barEmployerRrsp) barEmployerRrsp.style.width = ((info_employer_rrsp / totalComp) * 100) + '%';
+                if (barFedTax) barFedTax.style.width = ((actual.finalFedTax / totalComp) * 100) + '%';
+                if (barProvTax) barProvTax.style.width = ((actual.finalBcTax / totalComp) * 100) + '%';
+                if (barCpp) barCpp.style.width = ((actual.totalCpp / totalComp) * 100) + '%';
+                if (barEi) barEi.style.width = ((actual.totalEi / totalComp) * 100) + '%';
             }
 
             // Render Brackets Stack Visuals (Federal or BC active tab with light-theme styling)
@@ -1223,7 +1316,7 @@
 
                 currentActiveBrackets.forEach((b) => {
                     const limitText = b.max === Infinity ? 'No Limit' : formatCurrency(b.max);
-                    const netTaxableIncome = Math.max(0, info_income - totalPension);
+                    const netTaxableIncome = Math.max(0, info_income - info_employee_rpp);
                     const pctFilled = b.max === Infinity 
                         ? (netTaxableIncome > b.min ? 100 : 0)
                         : Math.min(100, Math.max(0, ((netTaxableIncome - b.min) / (b.max - b.min)) * 100));
@@ -1380,31 +1473,73 @@
                 sectionDesc.innerText = SECTION_META[tabId].desc;
             }
 
-            // Reset Card Style bindings (Removed metric-card-cpp reference)
-            const cards = ['metric-card-oas', 'metric-card-ympe', 'metric-card-rrsp'];
-            cards.forEach(cardId => {
-                const cEl = document.getElementById(cardId);
-                if (cEl) {
-                    cEl.classList.remove('active-card', 'ring-2', 'ring-emerald-600', 'bg-emerald-50/10', 'border-emerald-500/50', 'shadow-lg');
-                    cEl.classList.add('bg-white', 'border-slate-200/60', 'shadow-md');
+            // Rich design configuration variables mapped to avoid Tailwind parsing fragmentation
+            const cardConfigs = {
+                'metric-card-oas': {
+                    tab: 'cpp',
+                    activeCard: 'bg-gradient-to-br from-emerald-50/40 to-white border-emerald-500 ring-4 ring-emerald-500/10 shadow-emerald-100/60 shadow-xl border-2 hover:-translate-y-1 transition-all duration-300 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full',
+                    inactiveCard: 'bg-white border-slate-100 hover:border-emerald-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-2 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full shadow-sm',
+                    activeIcon: 'w-12 h-12 rounded-xl bg-slate-100 border border-slate-200/60 shadow-sm flex items-center justify-center transition-all duration-300 group-hover:scale-110',
+                    inactiveIcon: 'w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-slate-100/80',
+                    activeBadge: 'text-[9px] font-black tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full uppercase transition-all duration-300',
+                    inactiveBadge: 'text-[9px] font-black tracking-wider text-slate-400 bg-slate-100 border border-transparent px-2.5 py-1 rounded-full uppercase group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-all duration-300',
+                    activeBar: 'absolute bottom-0 left-0 right-0 h-1 bg-emerald-500 transform scale-x-100 transition-transform duration-300',
+                    inactiveBar: 'absolute bottom-0 left-0 right-0 h-1 bg-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'
+                },
+                'metric-card-ympe': {
+                    tab: 'pension-map',
+                    activeCard: 'bg-gradient-to-br from-indigo-50/40 to-white border-indigo-600 ring-4 ring-indigo-500/10 shadow-indigo-100/60 shadow-xl border-2 hover:-translate-y-1 transition-all duration-300 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full',
+                    inactiveCard: 'bg-white border-slate-100 hover:border-indigo-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-2 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full shadow-sm',
+                    activeIcon: 'w-12 h-12 rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-500/20 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-110',
+                    inactiveIcon: 'w-12 h-12 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-indigo-50 group-hover:text-indigo-600',
+                    activeBadge: 'text-[9px] font-black tracking-wider bg-indigo-100 text-indigo-800 border border-indigo-200 px-2.5 py-1 rounded-full uppercase transition-all duration-300',
+                    inactiveBadge: 'text-[9px] font-black tracking-wider text-slate-400 bg-slate-100 border border-transparent px-2.5 py-1 rounded-full uppercase group-hover:bg-indigo-50 group-hover:text-indigo-700 transition-all duration-300',
+                    activeBar: 'absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 transform scale-x-100 transition-transform duration-300',
+                    inactiveBar: 'absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'
+                },
+                'metric-card-rrsp': {
+                    tab: 'tax-infographic',
+                    activeCard: 'bg-gradient-to-br from-teal-50/40 to-white border-teal-600 ring-4 ring-teal-500/10 shadow-teal-100/60 shadow-xl border-2 hover:-translate-y-1 transition-all duration-300 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full',
+                    inactiveCard: 'bg-white border-slate-100 hover:border-teal-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-2 p-6 rounded-2xl cursor-pointer text-left relative overflow-hidden group flex flex-col justify-between min-h-[140px] w-full shadow-sm',
+                    activeIcon: 'w-12 h-12 rounded-xl bg-teal-600 text-white shadow-md shadow-teal-500/20 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-110',
+                    inactiveIcon: 'w-12 h-12 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-teal-50 group-hover:text-teal-600',
+                    activeBadge: 'text-[9px] font-black tracking-wider bg-teal-100 text-teal-800 border border-teal-200 px-2.5 py-1 rounded-full uppercase transition-all duration-300',
+                    inactiveBadge: 'text-[9px] font-black tracking-wider text-slate-400 bg-slate-100 border border-transparent px-2.5 py-1 rounded-full uppercase group-hover:bg-teal-50 group-hover:text-teal-700 transition-all duration-300',
+                    activeBar: 'absolute bottom-0 left-0 right-0 h-1 bg-teal-500 transform scale-x-100 transition-transform duration-300',
+                    inactiveBar: 'absolute bottom-0 left-0 right-0 h-1 bg-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'
+                }
+            };
+
+            // Loop over cards to update their presentation details seamlessly
+            Object.keys(cardConfigs).forEach(cardId => {
+                const config = cardConfigs[cardId];
+                const cardEl = document.getElementById(cardId);
+                const iconEl = cardEl ? cardEl.querySelector('[id^="icon-container-"]') : null;
+                const badgeEl = cardEl ? cardEl.querySelector('[id^="badge-"]') : null;
+                const barEl = cardEl ? cardEl.querySelector('.absolute.bottom-0') : null;
+
+                if (!cardEl) return;
+
+                const isActive = config.tab === tabId;
+
+                if (isActive) {
+                    cardEl.className = config.activeCard;
+                    if (iconEl && cardId !== 'metric-card-oas') iconEl.className = config.activeIcon;
+                    if (badgeEl) {
+                        badgeEl.innerText = "Active View";
+                        badgeEl.className = config.activeBadge;
+                    }
+                    if (barEl) barEl.className = config.activeBar;
+                } else {
+                    cardEl.className = config.inactiveCard;
+                    if (iconEl && cardId !== 'metric-card-oas') iconEl.className = config.inactiveIcon;
+                    if (badgeEl) {
+                        badgeEl.innerText = "Click to View";
+                        badgeEl.className = config.inactiveBadge;
+                    }
+                    if (barEl) barEl.className = config.inactiveBar;
                 }
             });
-
-            // Apply Active Classing based on target
-            let activeCardId = '';
-            if (tabId === 'cpp') {
-                activeCardId = 'metric-card-oas';
-            } else if (tabId === 'pension-map') {
-                activeCardId = 'metric-card-ympe';
-            } else if (tabId === 'tax-infographic') {
-                activeCardId = 'metric-card-rrsp';
-            }
-
-            const activeCard = document.getElementById(activeCardId);
-            if (activeCard) {
-                activeCard.classList.add('active-card', 'ring-2', 'ring-emerald-600', 'bg-emerald-50/10', 'border-emerald-500/50', 'shadow-lg');
-                activeCard.classList.remove('bg-white', 'border-slate-200/60', 'shadow-md');
-            }
 
             // Run Table Row Highlight if applicable
             if (tabId === 'cpp') {
