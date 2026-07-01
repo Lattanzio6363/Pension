@@ -82,10 +82,9 @@
                     </div>
                 </div>
                 
-                <!-- Quick Export Controls / Source Identification -->
+                <!-- Quick Export Controls -->
                 <div class="flex flex-col gap-2.5 sm:items-end">
                     <div class="flex gap-2">
-                        <!-- Download Standalone HTML Button -->
                         <button onclick="downloadInfographic()" class="bg-emerald-950 hover:bg-emerald-900 border border-emerald-800/40 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl shadow-md transition flex items-center gap-2">
                             <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -98,50 +97,59 @@
         </div>
     </header>
 
-    <!-- Key Metrics Grid -->
+    <!-- Key Metrics Grid Acting as Interactive Tabs -->
     <section class="max-w-7xl mx-auto px-4 md:px-6 -mt-4 relative z-20 w-full">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Metric 1 -->
-            <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-between transition hover:-translate-y-1 duration-200">
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">TFSA Contribution</span>
-                <span class="text-xl md:text-2xl font-black text-emerald-600 mt-1">$7,000</span>
-                <span class="text-[9px] text-slate-400 mt-1">Indexed to inflation (Saverio's files)</span>
-            </div>
-            <!-- Metric 2 -->
-            <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-between transition hover:-translate-y-1 duration-200">
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">RRSP Max Limit</span>
-                <span class="text-xl md:text-2xl font-black text-emerald-700 mt-1">$33,810</span>
-                <span class="text-[9px] text-slate-400 mt-1">Or 18% of prior year's earned income</span>
-            </div>
-            <!-- Metric 3 -->
-            <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-between transition hover:-translate-y-1 duration-200">
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Max Pension YMPE</span>
-                <span class="text-xl md:text-2xl font-black text-indigo-700 mt-1">$74,600</span>
-                <span class="text-[9px] text-slate-400 mt-1">Exemption base stays flat at $3,500</span>
-            </div>
-            <!-- Metric 4 -->
-            <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-between transition hover:-translate-y-1 duration-200">
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Max Monthly CPP</span>
-                <span class="text-xl md:text-2xl font-black text-blue-800 mt-1">$1,507.65</span>
-                <span class="text-[9px] text-slate-400 mt-1">For retirements starting @ 65</span>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <!-- Metric Tab 1: OAS -->
+            <button id="metric-card-oas" onclick="switchTab('cpp', 'oas')" class="bg-white p-5 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-center text-left transition hover:-translate-y-1 duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 w-full relative group min-h-[112px]">
+                <span class="text-sm md:text-base font-black text-slate-500 group-hover:text-emerald-600 uppercase tracking-wider transition duration-150 flex flex-col gap-1.5 leading-snug">
+                    <span class="text-xl">🏛️</span>
+                    <span>Public Pension<br/>(CPP & OAS)</span>
+                </span>
+            </button>
+
+            <!-- Metric Tab 3: YMPE (Replaced with Retirement Stack) -->
+            <button id="metric-card-ympe" onclick="switchTab('pension-map', 'ympe')" class="bg-white p-5 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-center text-left transition hover:-translate-y-1 duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 w-full relative group min-h-[112px]">
+                <div class="absolute top-4 right-4 flex items-center gap-1 opacity-0 group-[.active-card]:opacity-100 transition-opacity duration-200">
+                    <span class="text-[8px] font-bold tracking-wider text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-full uppercase">Stack Map</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+                </div>
+                <span class="text-sm md:text-base font-black text-slate-500 group-hover:text-indigo-600 uppercase tracking-wider transition duration-150 flex flex-col gap-1.5 leading-snug">
+                    <span class="text-xl">📊</span>
+                    <span>Retirement Stack<br/>(Integration Map)</span>
+                </span>
+            </button>
+
+            <!-- Metric Tab 4: RRSP -->
+            <button id="metric-card-rrsp" onclick="switchTab('tax-infographic', 'rrsp')" class="bg-white p-5 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-center text-left transition hover:-translate-y-1 duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 w-full relative group min-h-[112px]">
+                <div class="absolute top-4 right-4 flex items-center gap-1 opacity-0 group-[.active-card]:opacity-100 transition-opacity duration-200">
+                    <span class="text-[8px] font-bold tracking-wider text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full uppercase">Tax Shield</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                </div>
+                <span class="text-sm md:text-base font-black text-slate-500 group-hover:text-emerald-700 uppercase tracking-wider transition duration-150 flex flex-col gap-1.5 leading-snug">
+                    <span class="text-xl">📈</span>
+                    <span>Interactive Tax &amp;<br/>Pension Visualizer</span>
+                </span>
+            </button>
+
         </div>
     </section>
 
-    <!-- Main Content Container with Tabs -->
+    <!-- Main Content Container ... -->
+    <!-- Main Content Container -->
     <main class="max-w-7xl mx-auto px-4 md:px-6 py-10 flex-grow w-full">
         
-        <!-- Tab Navigation Buttons -->
-        <div class="flex flex-wrap border-b border-slate-200 mb-8 gap-2">
-            <button onclick="switchTab('cpp')" id="tab-cpp" class="tab-btn px-4 py-3 font-bold text-xs rounded-t-xl border-b-2 border-emerald-600 text-emerald-700 transition duration-150 flex items-center gap-2">
-                🏛️ Public Pensions (CPP & OAS)
-            </button>
-            <button onclick="switchTab('pension-map')" id="tab-pension-map" class="tab-btn px-4 py-3 font-semibold text-xs rounded-t-xl border-b-2 border-transparent text-slate-500 hover:text-emerald-700 transition duration-150 flex items-center gap-2">
-                📊 Retirement Stack Map
-            </button>
-            <button onclick="switchTab('tax-infographic')" id="tab-tax-infographic" class="tab-btn px-4 py-3 font-semibold text-xs rounded-t-xl border-b-2 border-transparent text-slate-500 hover:text-emerald-700 transition duration-150 flex items-center gap-2">
-                📈 Interactive Tax Visualizer
-            </button>
+        <!-- Active Section Description Block -->
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-200">
+            <div>
+                <h2 id="current-section-title" class="text-lg font-black tracking-tight text-slate-800 transition-all duration-300">
+                    🏛️ Public Pensions (CPP & OAS)
+                </h2>
+                <p id="current-section-desc" class="text-xs text-slate-500 mt-0.5 transition-all duration-300">
+                    Federal and provincial pension schedules, limits, and payout rates for 2026.
+                </p>
+            </div>
         </div>
 
         <!-- TAB 1: Public Pensions Combined -->
@@ -165,32 +173,32 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-100 text-xs text-slate-600">
-                                <tr>
+                                <tr id="row-ympe">
                                     <td class="p-4 font-semibold text-slate-800">Year's Maximum Pensionable Earnings (YMPE)</td>
                                     <td class="p-4 font-bold text-emerald-600">$74,600.00</td>
                                     <td class="p-4 text-slate-400">Ceiling for base CPP contribution premiums.</td>
                                 </tr>
-                                <tr>
+                                <tr id="row-ybe">
                                     <td class="p-4 font-semibold text-slate-800">Year's Basic Exemption (YBE)</td>
                                     <td class="p-4 font-bold text-emerald-600">$3,500.00</td>
                                     <td class="p-4 text-slate-400">First $3,500 of earnings is completely exempt.</td>
                                 </tr>
-                                <tr>
+                                <tr id="row-cpp-rate">
                                     <td class="p-4 font-semibold text-slate-800">Base CPP Contribution Rate (Employee)</td>
                                     <td class="p-4 font-bold text-indigo-600">5.95%</td>
                                     <td class="p-4 text-slate-400">Max annual employee premium: $4,230.45.</td>
                                 </tr>
-                                <tr class="bg-slate-50/40">
+                                <tr id="row-cpp-65" class="bg-slate-50/40">
                                     <td class="p-4 font-semibold text-slate-800">Max Monthly CPP Retirement at Age 65</td>
                                     <td class="p-4 font-bold text-emerald-600">$1,507.65</td>
                                     <td class="p-4 text-slate-400">Standard unreduced retirement benefit.</td>
                                 </tr>
-                                <tr>
+                                <tr id="row-cpp-60">
                                     <td class="p-4 font-semibold text-slate-800">Max Monthly CPP Retirement at Age 60</td>
                                     <td class="p-4 font-bold text-amber-600">$964.90</td>
                                     <td class="p-4 text-slate-400">Reduced early pension (36% standard reduction).</td>
                                 </tr>
-                                <tr>
+                                <tr id="row-oas">
                                     <td class="p-4 font-semibold text-slate-800">Basic OAS Payout (Monthly)</td>
                                     <td class="p-4 font-bold text-blue-600">$742.31</td>
                                     <td class="p-4 text-slate-400">Every person in Canada age 65+ meeting residency.</td>
@@ -276,7 +284,7 @@
 
                                 <!-- Bridge Benefit Row (Spans RA to 65) -->
                                 <div class="grid grid-cols-12 gap-2">
-                                    <div onclick="inspectLayer('bridge')" class="col-span-7 h-10 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm cursor-pointer transition flex items-center justify-center text-center leading-tight border border-emerald-700" id="btn-bridge">
+                                    <div onclick="inspectLayer('bridge')" class="col-span-7 h-10 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm cursor-pointer transition flex items-center justify-center text-center leading-tight border border-emerald-750" id="btn-bridge">
                                         Bridge Benefit (Ends at Age 65)
                                     </div>
                                     <div class="col-span-5 h-10 flex items-center justify-center text-[10px] font-bold text-slate-400 bg-white border border-slate-200 border-dashed rounded-xl">Ends at Age 65</div>
@@ -284,7 +292,7 @@
 
                                 <!-- Temporary Annuity Row (Spans RA to 65) -->
                                 <div class="grid grid-cols-12 gap-2">
-                                    <div onclick="inspectLayer('annuity')" class="col-span-7 h-10 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm cursor-pointer transition flex items-center justify-center text-center leading-tight border border-emerald-700" id="btn-annuity">
+                                    <div onclick="inspectLayer('annuity')" class="col-span-7 h-10 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm cursor-pointer transition flex items-center justify-center text-center leading-tight border border-emerald-750" id="btn-annuity">
                                         Temporary Annuity (Ends at Age 65)
                                     </div>
                                     <div class="col-span-5 h-10 flex items-center justify-center text-[10px] font-bold text-slate-400 bg-white border border-slate-200 border-dashed rounded-xl">Ends (Age 65+)</div>
@@ -299,12 +307,12 @@
                                 </div>
 
                                 <!-- Lifetime Pension Benefit -->
-                                <div onclick="inspectLayer('lifetime')" class="w-full h-10 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-xl shadow-sm cursor-pointer transition flex items-center justify-center border border-emerald-700" id="btn-lifetime">
+                                <div onclick="inspectLayer('lifetime')" class="w-full h-10 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-xl shadow-sm cursor-pointer transition flex items-center justify-center border border-emerald-750" id="btn-lifetime">
                                     Lifetime Pension Benefit - Special Agreement +/- (RA onwards through Life)
                                 </div>
 
                                 <!-- TFSA / RRSP / Savings Row -->
-                                <div onclick="inspectLayer('savings')" class="w-full h-10 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-xl shadow-sm cursor-pointer transition flex items-center justify-center border border-emerald-700" id="btn-savings">
+                                <div onclick="inspectLayer('savings')" class="w-full h-10 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-xl shadow-sm cursor-pointer transition flex items-center justify-center border border-emerald-750" id="btn-savings">
                                     TFSA / Real Estate / Personal Savings / RRSP (Fully Flexible Duration)
                                 </div>
 
@@ -359,22 +367,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- CTA Action Panel -->
-                    <div class="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-2xl border border-slate-200/60 shadow-sm">
-                        <h4 class="font-bold text-sm text-slate-700">Need specific tables?</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed mt-1 font-light">
-                            Explore full standard federal thresholds and clawback parameters.
-                        </p>
-                        <button onclick="switchTab('cpp')" class="mt-4 w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition shadow">
-                            View Public Pension Tables
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 4: Interactive Tax Infographic -->
+        <!-- TAB 3: Interactive Tax Infographic -->
         <div id="content-tax-infographic" class="tab-content hidden">
             <div class="mb-6 bg-emerald-50 border border-emerald-100 rounded-2xl p-4 text-slate-700 text-xs flex items-start gap-3">
                 <span class="text-lg">📈</span>
@@ -391,7 +388,7 @@
                     
                     <!-- Interactive Sliders Input Card -->
                     <div class="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-md">
-                        <h2 class="text-base font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <h2 class="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
                             <span class="w-6 h-6 rounded-lg bg-emerald-50 border border-emerald-100 text-emerald-600 font-extrabold flex items-center justify-center text-xs">01</span>
                             Income &amp; Savings Parameters
                         </h2>
@@ -599,7 +596,7 @@
                     </div>
                 </div>
 
-                <!-- RIGHT COLUMN: Progressive Brackets Visualizer & Deep Dives -->
+                <!-- RIGHT COLUMN: Progressive Brackets Visualizer -->
                 <div class="lg:col-span-8 flex flex-col gap-6">
                     
                     <!-- Section Selector -->
@@ -635,7 +632,7 @@
 
                         <!-- Brackets Stack visualization container -->
                         <div class="space-y-4" id="info-brackets-container">
-                            <!-- Populated Dynamically via JavaScript pipeline -->
+                            <!-- Populated Dynamically via JavaScript -->
                         </div>
 
                         <!-- Non-Refundable Credits (BPA) explanation -->
@@ -732,7 +729,7 @@
         </div>
         <div class="max-w-7xl mx-auto border-t border-slate-200 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px]">
             <p>© 2026 British Columbia Professional Fire Fighters Association. All rights reserved.</p>
-            <p>Interactive Infographic Build: v3.6.0 (Unified Schedules Map)</p>
+            <p>Interactive Infographic Build: v3.7.0 (Metric Tab Integrated)</p>
         </div>
     </footer>
 
@@ -869,6 +866,21 @@
             }
         };
 
+        const SECTION_META = {
+            'cpp': {
+                title: '🏛️ Public Pensions (CPP & OAS)',
+                desc: 'Federal and provincial pension schedules, limits, and payout rates for 2026.'
+            },
+            'pension-map': {
+                title: '📊 Retirement Stack Map',
+                desc: 'Interactive visual integration mapping how Bridge Benefits, Annuities, and Personal Savings stack together.'
+            },
+            'tax-infographic': {
+                title: '📈 Interactive Tax & Pension Visualizer',
+                desc: 'Simulate progressive income tax brackets, RPP pension shields, and RRSP limits in real time.'
+            }
+        };
+
         // Custom Notification Handler
         function showToast(message) {
             const toast = document.getElementById('toast-notification');
@@ -881,23 +893,6 @@
                     toast.classList.remove('translate-y-0', 'opacity-100');
                     toast.classList.add('translate-y-10', 'opacity-0', 'pointer-events-none');
                 }, 5000);
-            }
-        }
-
-        // Dynamic Exporter to Open App in a New Window
-        function exportToNewTab() {
-            try {
-                const completeHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-                const blob = new Blob([completeHtml], { type: 'text/html;charset=utf-8' });
-                const blobUrl = URL.createObjectURL(blob);
-                
-                const newWindow = window.open(blobUrl, '_blank');
-                if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-                    showToast("Popup blocker may have intercepted opening the window. Please click Download Standalone App instead.");
-                }
-            } catch (err) {
-                console.error("Popup block error:", err);
-                showToast("Opening in new window failed. Please use standard download.");
             }
         }
 
@@ -1326,8 +1321,44 @@
             }
         }
 
-        // Tab Switching
-        function switchTab(tabId) {
+        // Table Highlighting Engine based on active sub-targets
+        function highlightTableRow(target) {
+            // Reset active table row classes
+            const rows = ['row-ympe', 'row-ybe', 'row-cpp-rate', 'row-cpp-65', 'row-cpp-60', 'row-oas'];
+            rows.forEach(id => {
+                const r = document.getElementById(id);
+                if (r) {
+                    r.classList.remove('bg-emerald-50/60', 'font-semibold', 'text-slate-900', 'transition-all', 'duration-300');
+                }
+            });
+
+            // Target specifics
+            if (target === 'oas') {
+                const targetRow = document.getElementById('row-oas');
+                if (targetRow) {
+                    targetRow.classList.add('bg-emerald-50/60', 'font-semibold', 'text-slate-900', 'transition-all', 'duration-300');
+                    targetRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            } else if (target === 'cpp') {
+                const targetRow = document.getElementById('row-cpp-65');
+                const targetRowEarly = document.getElementById('row-cpp-60');
+                if (targetRow) {
+                    targetRow.classList.add('bg-emerald-50/60', 'font-semibold', 'text-slate-900', 'transition-all', 'duration-300');
+                    targetRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+                if (targetRowEarly) {
+                    targetRowEarly.classList.add('bg-emerald-50/60', 'font-semibold', 'text-slate-900', 'transition-all', 'duration-300');
+                }
+            } else if (target === 'ympe') {
+                const targetRow = document.getElementById('row-ympe');
+                if (targetRow) {
+                    targetRow.classList.add('bg-emerald-50/60', 'font-semibold', 'text-slate-900', 'transition-all', 'duration-300');
+                }
+            }
+        }
+
+        // Unified Tab and Card Navigation Switcher
+        function switchTab(tabId, subTarget) {
             // Hide all tabs
             document.querySelectorAll('.tab-content').forEach(element => {
                 element.classList.add('hidden');
@@ -1341,20 +1372,50 @@
                 targetContent.classList.add('block');
             }
 
-            // Reset tab button stylings safely
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = "tab-btn px-4 py-3 font-semibold text-xs rounded-t-xl border-b-2 border-transparent text-slate-500 hover:text-emerald-700 transition duration-150 flex items-center gap-2";
+            // Update Dynamic Tab Description Header
+            const sectionTitle = document.getElementById('current-section-title');
+            const sectionDesc = document.getElementById('current-section-desc');
+            if (sectionTitle && sectionDesc && SECTION_META[tabId]) {
+                sectionTitle.innerText = SECTION_META[tabId].title;
+                sectionDesc.innerText = SECTION_META[tabId].desc;
+            }
+
+            // Reset Card Style bindings (Removed metric-card-cpp reference)
+            const cards = ['metric-card-oas', 'metric-card-ympe', 'metric-card-rrsp'];
+            cards.forEach(cardId => {
+                const cEl = document.getElementById(cardId);
+                if (cEl) {
+                    cEl.classList.remove('active-card', 'ring-2', 'ring-emerald-600', 'bg-emerald-50/10', 'border-emerald-500/50', 'shadow-lg');
+                    cEl.classList.add('bg-white', 'border-slate-200/60', 'shadow-md');
+                }
             });
 
-            // Set current tab button active safely
-            const activeBtn = document.getElementById('tab-' + tabId);
-            if (activeBtn) {
-                activeBtn.className = "tab-btn active-tab px-4 py-3 font-bold text-xs rounded-t-xl border-b-2 border-emerald-600 text-emerald-700 transition duration-150 flex items-center gap-2";
+            // Apply Active Classing based on target
+            let activeCardId = '';
+            if (tabId === 'cpp') {
+                activeCardId = 'metric-card-oas';
+            } else if (tabId === 'pension-map') {
+                activeCardId = 'metric-card-ympe';
+            } else if (tabId === 'tax-infographic') {
+                activeCardId = 'metric-card-rrsp';
+            }
+
+            const activeCard = document.getElementById(activeCardId);
+            if (activeCard) {
+                activeCard.classList.add('active-card', 'ring-2', 'ring-emerald-600', 'bg-emerald-50/10', 'border-emerald-500/50', 'shadow-lg');
+                activeCard.classList.remove('bg-white', 'border-slate-200/60', 'shadow-md');
+            }
+
+            // Run Table Row Highlight if applicable
+            if (tabId === 'cpp') {
+                highlightTableRow(subTarget);
             }
         }
 
         // Run Initial State Calculations on window load
         window.onload = function() {
+            // Set first card/tab active as default
+            switchTab('cpp', 'oas');
             inspectLayer('bridge');
             updateTaxInfographicUI();
         }
