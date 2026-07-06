@@ -63,38 +63,32 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-6">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div class="flex items-center gap-4">
-                    <!-- BCPFFA Logo Container with premium Maltese Cross vector logo -->
-                    <div class="bg-white p-1.5 rounded-2xl shadow-md shrink-0 border border-emerald-500/10 flex items-center justify-center min-w-[64px] min-h-[64px]">
-                        <svg id="header-logo-svg" class="h-14 w-14 drop-shadow" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background Shield -->
-                            <rect width="100" height="100" rx="20" fill="#065f46"></rect>
-                            <circle cx="50" cy="50" r="46" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2 2"></circle>
-                            
-                            <!-- Crossed Axes (Golden Fire Axes) -->
-                            <path d="M22 78 L78 22 M78 22 L72 16 L66 22 M22 78 L28 84 L34 78" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"></path>
-                            <path d="M78 78 L22 22 M22 22 L16 28 L22 34 M78 78 L84 72 L78 66" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"></path>
-                            
-                            <!-- Maltese Cross Body -->
-                            <g filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.3))">
-                                <path d="M50 32 L36 14 C43 12 57 12 64 14 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round"></path>
-                                <path d="M50 68 L36 86 C43 88 57 88 64 86 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round"></path>
-                                <path d="M32 50 L14 36 C12 43 12 57 14 64 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round"></path>
-                                <path d="M68 50 L86 36 C88 43 88 57 86 64 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round"></path>
-                                <circle cx="50" cy="50" r="18" fill="#b91c1c" stroke="#fbbf24" stroke-width="2"></circle>
-                            </g>
-                            
-                            <!-- Central Gold Crest with Canadian Maple Leaf -->
-                            <circle cx="50" cy="50" r="13" fill="#fbbf24"></circle>
-                            <path d="M50 41 C49 44 45 44 46 47 C44 46 42 47 43 49 C41 48 39 50 41 52 C43 52 45 51 46 53 C44 54 44 56 47 55 C47 57 48 59 50 60 C52 59 53 57 53 55 C56 56 56 54 54 53 C55 51 57 52 59 52 C61 50 59 48 57 49 C58 47 56 46 54 47 C55 44 51 44 50 41 Z" fill="#b91c1c"></path>
-                            <!-- Leaf Stem -->
-                            <path d="M50 59 L50 63" stroke="#b91c1c" stroke-width="1.5" stroke-linecap="round"></path>
-                            
-                            <!-- Maltese Cross Text Labels -->
-                            <text x="50" y="24" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle" letter-spacing="0.5">BC</text>
-                            <text x="50" y="81" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">A</text>
-                            <text x="22" y="53" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">PF</text>
-                            <text x="78" y="53" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">FA</text>
-                        </svg>
+                    <!-- BCPFFA Logo Container displaying BCPFFA.jpg with SVG fallback -->
+                    <div class="bg-white p-1 rounded-2xl shadow-md shrink-0 border border-emerald-500/10 flex items-center justify-center min-w-[76px] min-h-[76px]">
+                        <img id="header-logo-img" src="BCPFFA.jpg" alt="BCPFFA Logo" class="h-16 w-16 object-contain rounded-xl" onerror="this.style.display='none'; document.getElementById('header-logo-fallback').classList.remove('hidden');">
+                        <!-- Custom vector fallback shown ONLY if BCPFFA.jpg fails to load -->
+                        <div id="header-logo-fallback" class="hidden h-16 w-16 flex items-center justify-center">
+                            <svg class="h-14 w-14 drop-shadow" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" rx="20" fill="#065f46"></rect>
+                                <circle cx="50" cy="50" r="46" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2 2"></circle>
+                                <path d="M22 78 L78 22 M78 22 L72 16 L66 22 M22 78 L28 84 L34 78" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"></path>
+                                <path d="M78 78 L22 22 M22 22 L16 28 L22 34 M78 78 L84 72 L78 66" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"></path>
+                                <g filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.3))">
+                                    <path d="M50 32 L36 14 C43 12 57 12 64 14 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round"></path>
+                                    <path d="M50 68 L36 86 C43 88 57 88 64 86 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round"></path>
+                                    <path d="M32 50 L14 36 C12 43 12 57 14 64 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round"></path>
+                                    <path d="M68 50 L86 36 C88 43 88 57 86 64 Z" fill="#b91c1c" stroke="#fbbf24" stroke-width="1.5" stroke-linejoin="round"></path>
+                                    <circle cx="50" cy="50" r="18" fill="#b91c1c" stroke="#fbbf24" stroke-width="2"></circle>
+                                </g>
+                                <circle cx="50" cy="50" r="13" fill="#fbbf24"></circle>
+                                <path d="M50 41 C49 44 45 44 46 47 C44 46 42 47 43 49 C41 48 39 50 41 52 C43 52 45 51 46 53 C44 54 44 56 47 55 C47 57 48 59 50 60 C52 59 53 57 53 55 C56 56 56 54 54 53 C55 51 57 52 59 52 C61 50 59 48 57 49 C58 47 56 46 54 47 C55 44 51 44 50 41 Z" fill="#b91c1c"></path>
+                                <path d="M50 59 L50 63" stroke="#b91c1c" stroke-width="1.5" stroke-linecap="round"></path>
+                                <text x="50" y="24" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle" letter-spacing="0.5">BC</text>
+                                <text x="50" y="81" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">A</text>
+                                <text x="22" y="53" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">PF</text>
+                                <text x="78" y="53" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="8" text-anchor="middle">FA</text>
+                            </svg>
+                        </div>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
@@ -374,7 +368,7 @@
                             </div>
 
                             <!-- Timeline Markers -->
-                            <div class="border-t border-slate-200 mt-6 pt-3 grid grid-cols-12 text-center text-xs font-extrabold text-slate-600">
+                            <div class="border-t border-slate-200 mt-6 pt-3 grid grid-cols-12 text-center text-xs font-extrabold text-slate-600 font-sans">
                                 <div class="col-span-3 flex flex-col items-center">
                                     <div class="w-7 h-7 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center mb-1 shadow-sm text-[10px]">RA</div>
                                     <span class="text-[10px] text-slate-400">Retirement Age</span>
@@ -422,7 +416,7 @@
 
             <!-- Bold Custom Quote Block -->
             <div class="mt-8 p-5 bg-slate-100/60 border border-slate-200/80 rounded-2xl text-center shadow-sm">
-                <p class="text-sm md:text-base text-blue-700 font-extrabold italic tracking-wide">
+                <p class="text-sm md:text-base text-blue-700 font-extrabold italic tracking-wide font-sans">
                     "I'm more concerned about my best 5 off the job than on the job"
                 </p>
             </div>
@@ -1538,9 +1532,9 @@
                 'metric-card-ympe': {
                     tab: 'pension-map',
                     activeCard: 'bg-indigo-100/95 border-indigo-600 ring-4 ring-indigo-500/20 shadow-md border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full',
-                    inactiveCard: 'bg-indigo-50/80 border-indigo-350 hover:border-indigo-500 hover:bg-indigo-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm',
+                    inactiveCard: 'bg-indigo-50/80 border-indigo-300 hover:border-indigo-500 hover:bg-indigo-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm',
                     activeBadge: 'text-[8px] font-black tracking-wider bg-indigo-600 text-white border border-indigo-700 px-2 py-0.5 rounded-full uppercase transition-all duration-300 shrink-0',
-                    inactiveBadge: 'text-[8px] font-black tracking-wider text-indigo-800 bg-indigo-100 border border-indigo-200 px-2 py-0.5 rounded-full uppercase group-hover:bg-indigo-200 group-hover:text-indigo-900 transition-all duration-300 shrink-0',
+                    inactiveBadge: 'text-[8px] font-black tracking-wider text-indigo-800 bg-indigo-100 border border-indigo-200 px-2 py-0.5 rounded-full uppercase group-hover:bg-emerald-200 group-hover:text-emerald-900 transition-all duration-300 shrink-0',
                     activeBar: 'absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 transform scale-x-100 transition-transform duration-300',
                     inactiveBar: 'absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'
                 },
@@ -1549,7 +1543,7 @@
                     activeCard: 'bg-teal-100/95 border-teal-600 ring-4 ring-teal-500/20 shadow-md border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full',
                     inactiveCard: 'bg-teal-50/80 border-teal-355 hover:border-teal-500 hover:bg-teal-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm',
                     activeBadge: 'text-[8px] font-black tracking-wider bg-teal-600 text-white border border-teal-700 px-2 py-0.5 rounded-full uppercase transition-all duration-300 shrink-0',
-                    inactiveBadge: 'text-[8px] font-black tracking-wider text-teal-800 bg-teal-100 border border-teal-200 px-2 py-0.5 rounded-full uppercase group-hover:bg-teal-200 group-hover:text-teal-900 transition-all duration-300 shrink-0',
+                    inactiveBadge: 'text-[8px] font-black tracking-wider text-teal-800 bg-teal-100 border border-teal-200 px-2 py-0.5 rounded-full uppercase group-hover:bg-emerald-200 group-hover:text-emerald-900 transition-all duration-300 shrink-0',
                     activeBar: 'absolute bottom-0 left-0 right-0 h-1 bg-teal-500 transform scale-x-100 transition-transform duration-300',
                     inactiveBar: 'absolute bottom-0 left-0 right-0 h-1 bg-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'
                 }
