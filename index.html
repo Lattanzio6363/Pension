@@ -59,7 +59,7 @@
 <body class="min-h-screen flex flex-col justify-between selection:bg-emerald-100 selection:text-emerald-900">
 
     <!-- Brand Header -->
-    <header class="bg-gradient-to-r from-emerald-900 via-emerald-850 to-slate-900 border-b border-emerald-850/30 shadow-lg text-white">
+    <header class="bg-gradient-to-r from-emerald-900 via-emerald-850 to-slate-900 border-b border-emerald-800/30 shadow-lg text-white">
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-6">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div class="flex items-center gap-4">
@@ -127,7 +127,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             
             <!-- Metric Tab 1: Public Pension -->
-            <button id="metric-card-oas" onclick="switchTab('cpp', 'oas')" class="bg-emerald-50/80 border-emerald-350 hover:border-emerald-500 hover:bg-emerald-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm">
+            <button id="metric-card-oas" onclick="switchTab('cpp', 'oas')" class="bg-emerald-50/80 border-emerald-300 hover:border-emerald-500 hover:bg-emerald-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm">
                 <div class="flex items-center gap-3">
                     <div id="icon-container-oas" class="w-8 h-8 rounded-lg bg-white border border-emerald-200 flex items-center justify-center transition-all duration-300 group-hover:scale-110 shrink-0 shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9600 4800" class="w-6 h-4 rounded border border-slate-200 object-cover shrink-0">
@@ -147,7 +147,7 @@
             </button>
 
             <!-- Metric Tab 2: Retirement Stack -->
-            <button id="metric-card-ympe" onclick="switchTab('pension-map', 'ympe')" class="bg-indigo-50/80 border-indigo-350 hover:border-indigo-500 hover:bg-indigo-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm">
+            <button id="metric-card-ympe" onclick="switchTab('pension-map', 'ympe')" class="bg-indigo-50/80 border-indigo-300 hover:border-indigo-500 hover:bg-indigo-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm">
                 <div class="flex items-center gap-3">
                     <div id="icon-container-ympe" class="w-8 h-8 rounded-lg bg-white border border-indigo-200 text-slate-500 flex items-center justify-center text-sm transition-all duration-300 group-hover:scale-110 shrink-0 shadow-sm">📊</div>
                     <div>
@@ -162,7 +162,7 @@
             </button>
 
             <!-- Metric Tab 3: Interactive Tax Visualizer -->
-            <button id="metric-card-rrsp" onclick="switchTab('tax-infographic', 'rrsp')" class="bg-teal-50/80 border-teal-355 hover:border-teal-500 hover:bg-teal-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm">
+            <button id="metric-card-rrsp" onclick="switchTab('tax-infographic', 'rrsp')" class="bg-teal-50/80 border-teal-300 hover:border-teal-500 hover:bg-teal-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm">
                 <div class="flex items-center gap-3">
                     <div id="icon-container-rrsp" class="w-8 h-8 rounded-lg bg-white border border-teal-200 text-slate-500 flex items-center justify-center text-sm transition-all duration-300 group-hover:scale-110 shrink-0 shadow-sm">📈</div>
                     <div>
@@ -414,6 +414,51 @@
                 </div>
             </div>
 
+            <!-- Indexing Safeguards Card Grid -->
+            <div class="mt-8 bg-white border border-slate-200/60 rounded-2xl p-6 shadow-md font-sans">
+                <h4 class="font-display font-bold text-slate-800 text-xs tracking-wider uppercase flex items-center gap-2 mb-4">
+                    <span class="text-lg">🔄</span> Inflation Shields &amp; Indexing Safeguards
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- DB Pension COLA -->
+                    <div class="bg-emerald-50/40 border border-emerald-100 rounded-xl p-4.5 space-y-2 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="text-emerald-800 font-bold text-xs">🛡️ BC MPP Pension COLA</span>
+                                <span class="text-[8px] bg-emerald-100 text-emerald-800 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Annual (Jan)</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">
+                                Under the BC Municipal Pension Plan (MPP), cost-of-living adjustments (COLA) are evaluated annually. While not contractually guaranteed, inflation indexation is historically granted each January depending on the funding strength of the plan's inflation adjustment account.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- CPP Indexing -->
+                    <div class="bg-sky-50/40 border border-sky-100 rounded-xl p-4.5 space-y-2 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="text-sky-800 font-bold text-xs">📈 CPP Indexing Protection</span>
+                                <span class="text-[8px] bg-sky-100 text-sky-800 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Annual (Jan)</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">
+                                Canada Pension Plan payouts are automatically adjusted every January. This indexing is fully guaranteed by the federal government and matches shifts in Canada's Consumer Price Index (CPI), ensuring your public retirement baseline never loses purchasing power.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- OAS Indexing -->
+                    <div class="bg-indigo-50/40 border border-indigo-100 rounded-xl p-4.5 space-y-2 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-1.5">
+                                <span class="text-indigo-800 font-bold text-xs">⚖️ OAS Quarterly Adjustments</span>
+                                <span class="text-[8px] bg-indigo-100 text-indigo-800 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Quarterly</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">
+                                Old Age Security (OAS) benefits are indexed quarterly (January, April, July, and October) to respond rapidly to changing cost levels. Adjustments are calculated using the Consumer Price Index, providing a buffer against mid-year price changes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Bold Custom Quote Block -->
             <div class="mt-8 p-5 bg-slate-100/60 border border-slate-200/80 rounded-2xl text-center shadow-sm">
                 <p class="text-sm md:text-base text-blue-700 font-extrabold italic tracking-wide font-sans">
@@ -449,36 +494,52 @@
                     <!-- Interactive Sliders Input Card -->
                     <div class="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-md">
                         
-                        <!-- BOLD RETIRED MEMBER CHECKBOX BOX -->
+                        <!-- BOLD MUTUALLY EXCLUSIVE MEMBER STATUS SELECTOR -->
                         <div class="mb-6 bg-gradient-to-br from-emerald-50 via-white to-emerald-50/30 p-4 rounded-xl border-2 border-emerald-500 shadow-md ring-4 ring-emerald-500/10 hover:shadow-lg transition-all duration-300">
-                            <div class="flex items-center justify-between gap-3">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-lg">👤</span>
-                                    <div>
-                                        <span class="text-xs font-black text-slate-900 block leading-tight">Retired Member Status</span>
-                                        <span class="text-[9px] text-slate-500 block leading-none mt-0.5">Applies passive income rules</span>
+                            <h3 class="text-xs font-black text-slate-800 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                                <span>👤</span> Member Affiliation Status
+                            </h3>
+                            <div class="grid grid-cols-2 gap-2.5">
+                                <!-- Active Member Checkbox Card -->
+                                <label class="flex items-center justify-between p-2.5 rounded-lg border-2 border-emerald-500 bg-white hover:border-emerald-500/50 cursor-pointer transition-all duration-200">
+                                    <div class="flex flex-col">
+                                        <span class="text-[11px] font-black text-slate-900 leading-tight">Active Member</span>
+                                        <span class="text-[8px] text-slate-500 leading-none mt-0.5">Deductions active</span>
                                     </div>
-                                </div>
-                                <input type="checkbox" id="retired-member-checkbox" onchange="toggleRetiredMemberStatus(this.checked)" class="text-emerald-600 focus:ring-emerald-500 rounded border-2 border-emerald-300 w-5 h-5 cursor-pointer accent-emerald-500">
+                                    <input type="checkbox" id="active-member-checkbox" onchange="toggleActiveMemberStatus(this.checked)" class="text-emerald-600 focus:ring-emerald-500 rounded border-2 border-emerald-500 w-4 h-4 cursor-pointer accent-emerald-500" checked>
+                                </label>
+                                
+                                <!-- Retired Member Checkbox Card -->
+                                <label class="flex items-center justify-between p-2.5 rounded-lg border-2 border-slate-200 bg-white hover:border-emerald-500/50 cursor-pointer transition-all duration-200">
+                                    <div class="flex flex-col">
+                                        <span class="text-[11px] font-black text-slate-900 leading-tight">Retired Member</span>
+                                        <span class="text-[8px] text-slate-500 leading-none mt-0.5">Passive rules apply</span>
+                                    </div>
+                                    <input type="checkbox" id="retired-member-checkbox" onchange="toggleRetiredMemberStatus(this.checked)" class="text-emerald-600 focus:ring-emerald-500 rounded border-2 border-slate-300 w-4 h-4 cursor-pointer accent-emerald-500">
+                                </label>
                             </div>
                         </div>
 
-                        <h2 class="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
-                            <span class="w-6 h-6 rounded-lg bg-emerald-50 border border-emerald-100 text-emerald-600 font-extrabold flex items-center justify-center text-xs">01</span>
-                            Income &amp; Savings Parameters
-                        </h2>
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-lg bg-emerald-50 border border-emerald-100 text-emerald-600 font-extrabold flex items-center justify-center text-xs">01</span>
+                                Parameter Tuning
+                            </h2>
+                        </div>
                         <p class="text-slate-500 text-xs mb-5 font-light">
                             Set your metrics below to witness the bracket fill animations and watch your taxable income fall.
                         </p>
 
-                        <!-- Income Input Box & Slider -->
+                        <!-- Income Input Box & Slider (Flippable Direction) -->
                         <div class="mb-6">
                             <div class="flex justify-between items-center mb-1.5">
-                                <label for="info-income-slider" class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Gross Annual Income</label>
-                                <span class="text-sm font-black text-slate-800 font-mono" id="info-income-text">$221,000.00</span>
+                                <label for="info-income-slider" id="income-slider-label" class="text-[10px] font-extrabold text-emerald-800 uppercase tracking-wide flex items-center gap-1">
+                                    Gross Annual Income ⮕
+                                </label>
+                                <span class="text-sm font-black text-emerald-700 font-mono" id="info-income-text">$221,000.00</span>
                             </div>
-                            <input type="range" id="info-income-slider" min="15000" max="350000" step="1000" value="221000" oninput="onIncomeChange(this.value)" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500 focus:outline-none mb-3">
-                            <div class="flex justify-between text-[9px] text-slate-400 font-bold uppercase tracking-wider">
+                            <input type="range" id="info-income-slider" min="15000" max="350000" step="1000" value="221000" oninput="onIncomeChange(this.value)" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500 focus:outline-none mb-3" dir="ltr">
+                            <div class="flex justify-between text-[9px] text-slate-400 font-bold uppercase tracking-wider transition-all duration-300" id="income-slider-limits">
                                 <span>Min: $15,000</span>
                                 <span>Max: $350,000</span>
                             </div>
@@ -487,26 +548,26 @@
                         <!-- Employee pension contributions (RPP) Slider -->
                         <div class="mb-6" id="rpp-slider-container">
                             <div class="flex justify-between items-center mb-1.5">
-                                <label for="info-employee-rpp-slider" class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Employee Pension Contributions (RPP)</label>
+                                <label for="info-employee-rpp-slider" class="text-[10px] font-extrabold text-purple-800 uppercase tracking-wide">Employee Pension Contributions (RPP)</label>
                                 <span class="text-sm font-black text-purple-600 font-mono" id="info-employee-rpp-text">$0</span>
                             </div>
                             <input type="range" id="info-employee-rpp-slider" min="0" max="35390" step="100" value="0" oninput="onEmployeeRPPChange(this.value)" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-purple-500 focus:outline-none mb-3">
                             <div class="flex justify-between text-[9px] text-slate-400 font-bold uppercase tracking-wider">
                                 <span>Min: $0</span>
-                                <span id="info-rpp-max-label">Max RPP: $35,390.00</span>
+                                <span id="info-rpp-max-label" class="text-purple-500/90">Max RPP: $35,390.00</span>
                             </div>
                         </div>
 
                         <!-- Employer pension contributions (RRSP) Slider -->
                         <div class="mb-2" id="rrsp-slider-container">
                             <div class="flex justify-between items-center mb-1.5">
-                                <label for="info-employer-rrsp-slider" class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Employer Pension Contributions (RRSP)</label>
+                                <label for="info-employer-rrsp-slider" class="text-[10px] font-extrabold text-fuchsia-800 uppercase tracking-wide">Employer Pension Contributions (RRSP)</label>
                                 <span class="text-sm font-black text-fuchsia-600 font-mono" id="info-employer-rrsp-text">$0</span>
                             </div>
                             <input type="range" id="info-employer-rrsp-slider" min="0" max="33810" step="100" value="0" oninput="onEmployerRRSPChange(this.value)" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-fuchsia-500 focus:outline-none mb-3">
                             <div class="flex justify-between text-[9px] text-slate-400 font-bold uppercase tracking-wider">
                                 <span>Min: $0</span>
-                                <span id="info-rrsp-max-label">Max RRSP: $33,810.00</span>
+                                <span id="info-rrsp-max-label" class="text-fuchsia-500/90">Max RRSP: $33,810.00</span>
                             </div>
                         </div>
 
@@ -543,7 +604,7 @@
                                 </div>
 
                                 <!-- Employee RPP Savings Row -->
-                                <div class="flex items-center justify-between p-3 rounded-xl bg-purple-50 border border-purple-100 hover:bg-purple-100/30 transition-all duration-200">
+                                <div id="row-visualizer-employee-rpp" class="flex items-center justify-between p-3 rounded-xl bg-purple-50 border border-purple-100 hover:bg-purple-100/30 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
                                         <div class="w-3.5 h-3.5 rounded bg-purple-500 shadow-sm shadow-purple-500/25"></div>
                                         <span class="text-slate-700 text-[11px] font-bold">Employee RPP Savings</span>
@@ -555,7 +616,7 @@
                                 </div>
 
                                 <!-- Employer RRSP Savings Row -->
-                                <div class="flex items-center justify-between p-3 rounded-xl bg-fuchsia-50 border border-fuchsia-100 hover:bg-fuchsia-100/30 transition-all duration-200">
+                                <div id="row-visualizer-employer-rrsp" class="flex items-center justify-between p-3 rounded-xl bg-fuchsia-50 border border-fuchsia-100 hover:bg-fuchsia-100/30 transition-all duration-200">
                                     <div class="flex items-center gap-2.5">
                                         <div class="w-3.5 h-3.5 rounded bg-fuchsia-50 shadow-sm shadow-fuchsia-500/25"></div>
                                         <span class="text-slate-700 text-[11px] font-bold">Employer RRSP Savings</span>
@@ -572,7 +633,7 @@
                                         <span class="text-base">🎉</span>
                                         <div>
                                             <span class="text-teal-700 text-xs font-bold block leading-none">Instant Tax Shield Savings</span>
-                                            <span class="text-[9px] text-teal-600 block mt-1">Employee RPP Shield</span>
+                                            <span class="text-[9px] text-teal-600 block mt-1">Employee RPP &amp; RRSP Shield</span>
                                         </div>
                                     </div>
                                     <div class="text-right">
@@ -638,11 +699,11 @@
                             <!-- Summary -->
                             <div class="mt-4 pt-4 border-t border-slate-200 text-slate-500 text-[11px] flex flex-col gap-2 font-bold">
                                 <div class="flex justify-between">
-                                    <span>Total Outflows &amp; Employee RPP:</span>
+                                    <span>Total Deductions &amp; Employee RPP:</span>
                                     <span id="info-val-total-deductions" class="text-slate-800 font-mono">$73,914.35</span>
                                 </div>
                                 <div class="flex justify-between border-t border-slate-100 pt-2 text-emerald-700">
-                                    <span>Total Compensation:</span>
+                                    <span>Total Combined Allocation:</span>
                                     <span id="info-val-total-compensation" class="font-mono font-black">$221,000.00</span>
                                 </div>
                             </div>
@@ -809,6 +870,7 @@
         let info_employer_rrsp = 0;
         let info_activeTab = 'federal'; // 'federal' or 'bc'
         let isRetiredMember = false;
+        let isActiveMember = true;
 
         // Constants Map aligned with current 2026 limits
         const CONSTANTS_INFO = {
@@ -846,6 +908,21 @@
             eiLimit: 68900,
             eiRate: 0.0163,
             maxEi: 1123.07
+        };
+
+        const SECTION_META = {
+            'cpp': {
+                title: '🏛️ Public Pensions (CPP & OAS)',
+                desc: 'Federal and provincial pension schedules, limits, and payout rates for 2026.'
+            },
+            'pension-map': {
+                title: '📊 Retirement Stack Map',
+                desc: 'Interactive visual integration mapping how Bridge Benefits, Annuities, and Personal Savings stack together.'
+            },
+            'tax-infographic': {
+                title: '📈 Interactive Tax & Pension Visualizer',
+                desc: 'Simulate progressive income tax brackets, RPP pension shields, and RRSP limits in real time.'
+            }
         };
 
         const LAYER_DATA = {
@@ -930,21 +1007,6 @@
             }
         };
 
-        const SECTION_META = {
-            'cpp': {
-                title: '🏛️ Public Pensions (CPP & OAS)',
-                desc: 'Federal and provincial pension schedules, limits, and payout rates for 2026.'
-            },
-            'pension-map': {
-                title: '📊 Retirement Stack Map',
-                desc: 'Interactive visual integration mapping how Bridge Benefits, Annuities, and Personal Savings stack together.'
-            },
-            'tax-infographic': {
-                title: '📈 Interactive Tax & Pension Visualizer',
-                desc: 'Simulate progressive income tax brackets, RPP pension shields, and RRSP limits in real time.'
-            }
-        };
-
         // Custom Notification Handler
         function showToast(message) {
             const toast = document.getElementById('toast-notification');
@@ -987,20 +1049,118 @@
             return '$' + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
 
-        // STATE CONTROLLERS FOR CHECKBOX INTERACTIONS
-        function toggleRetiredMemberStatus(checked) {
-            isRetiredMember = checked;
-            
-            const rppSlider = document.getElementById('info-employee-rpp-slider');
-            const rrspSlider = document.getElementById('info-employer-rrsp-slider');
-            const rowVisualizerCpp = document.getElementById('row-visualizer-cpp');
-            const rowVisualizerEi = document.getElementById('row-visualizer-ei');
-            const payrollBreakdownCard = document.getElementById('visualizer-payroll-card');
+        // STATE CONTROLLERS FOR CHECKBOX INTERACTIONS WITH SLIDER ORIENTATION SHIFTS
+        function updateSliderDirection(isRetired) {
+            const incomeSlider = document.getElementById('info-income-slider');
+            const incomeLabel = document.getElementById('income-slider-label');
+            const incomeLimits = document.getElementById('income-slider-limits');
 
+            if (isRetired) {
+                // Flip direction to right-to-left to represent retirement income logic
+                if (incomeSlider) {
+                    incomeSlider.setAttribute('dir', 'rtl');
+                    incomeSlider.className = "w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 focus:outline-none mb-3";
+                }
+                if (incomeLabel) {
+                    incomeLabel.innerHTML = '⬅ Annual Retirement Income';
+                    incomeLabel.className = "text-[10px] font-extrabold text-blue-800 uppercase tracking-wide flex items-center gap-1";
+                }
+                if (incomeLimits) {
+                    // Swap limits on screen so label location matches physical slider min/max
+                    incomeLimits.innerHTML = `
+                        <span>Max: $350,000</span>
+                        <span>Min: $15,000</span>
+                    `;
+                    incomeLimits.className = "flex justify-between text-[9px] text-blue-500 font-bold uppercase tracking-wider transition-all duration-300";
+                }
+            } else {
+                // Flow standard LTR for salary accumulation
+                if (incomeSlider) {
+                    incomeSlider.setAttribute('dir', 'ltr');
+                    incomeSlider.className = "w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500 focus:outline-none mb-3";
+                }
+                if (incomeLabel) {
+                    incomeLabel.innerHTML = 'Gross Annual Income ⮕';
+                    incomeLabel.className = "text-[10px] font-extrabold text-emerald-800 uppercase tracking-wide flex items-center gap-1";
+                }
+                if (incomeLimits) {
+                    incomeLimits.innerHTML = `
+                        <span>Min: $15,000</span>
+                        <span>Max: $350,000</span>
+                    `;
+                    incomeLimits.className = "flex justify-between text-[9px] text-slate-400 font-bold uppercase tracking-wider transition-all duration-300";
+                }
+            }
+        }
+
+        function toggleActiveMemberStatus(checked) {
             if (checked) {
+                isActiveMember = true;
+                isRetiredMember = false;
+                document.getElementById('retired-member-checkbox').checked = false;
+                
+                // Visual feedback update
+                document.getElementById('active-member-checkbox').parentElement.classList.add('border-emerald-500');
+                document.getElementById('active-member-checkbox').parentElement.classList.remove('border-slate-200');
+                document.getElementById('retired-member-checkbox').parentElement.classList.remove('border-emerald-500');
+                document.getElementById('retired-member-checkbox').parentElement.classList.add('border-slate-200');
+
+                // Restore deduction controls and show containers
+                const rppSlider = document.getElementById('info-employee-rpp-slider');
+                const rrspSlider = document.getElementById('info-employer-rrsp-slider');
+                const rppSliderContainer = document.getElementById('rpp-slider-container');
+                const rrspSliderContainer = document.getElementById('rrsp-slider-container');
+                const rowVisualizerCpp = document.getElementById('row-visualizer-cpp');
+                const rowVisualizerEi = document.getElementById('row-visualizer-ei');
+                const payrollBreakdownCard = document.getElementById('visualizer-payroll-card');
+                const rowVisualizerRpp = document.getElementById('row-visualizer-employee-rpp');
+                const rowVisualizerRrsp = document.getElementById('row-visualizer-employer-rrsp');
+
+                if (rppSlider) rppSlider.disabled = false;
+                if (rrspSlider) rrspSlider.disabled = false;
+                if (rppSliderContainer) rppSliderContainer.classList.remove('hidden');
+                if (rrspSliderContainer) rrspSliderContainer.classList.remove('hidden');
+                if (rowVisualizerCpp) rowVisualizerCpp.classList.remove('hidden');
+                if (rowVisualizerEi) rowVisualizerEi.classList.remove('hidden');
+                if (payrollBreakdownCard) payrollBreakdownCard.classList.remove('hidden');
+                if (rowVisualizerRpp) rowVisualizerRpp.classList.remove('hidden');
+                if (rowVisualizerRrsp) rowVisualizerRrsp.classList.remove('hidden');
+
+                updateSliderDirection(false);
+                onIncomeChange(info_income);
+                showToast("Active Member Status Enabled: Accumulation rules and deduction schedules restored.");
+            } else {
+                // If user unchecks active, force retired to true
+                toggleRetiredMemberStatus(true);
+            }
+            updateTaxInfographicUI();
+        }
+
+        function toggleRetiredMemberStatus(checked) {
+            if (checked) {
+                isRetiredMember = true;
+                isActiveMember = false;
+                document.getElementById('active-member-checkbox').checked = false;
+
+                // Visual feedback update
+                document.getElementById('retired-member-checkbox').parentElement.classList.add('border-emerald-500');
+                document.getElementById('retired-member-checkbox').parentElement.classList.remove('border-slate-200');
+                document.getElementById('active-member-checkbox').parentElement.classList.remove('border-emerald-500');
+                document.getElementById('active-member-checkbox').parentElement.classList.add('border-slate-200');
+
                 // Instantly force and lock RPP & RRSP to 0
                 info_employee_rpp = 0;
                 info_employer_rrsp = 0;
+
+                const rppSlider = document.getElementById('info-employee-rpp-slider');
+                const rrspSlider = document.getElementById('info-employer-rrsp-slider');
+                const rppSliderContainer = document.getElementById('rpp-slider-container');
+                const rrspSliderContainer = document.getElementById('rrsp-slider-container');
+                const rowVisualizerCpp = document.getElementById('row-visualizer-cpp');
+                const rowVisualizerEi = document.getElementById('row-visualizer-ei');
+                const payrollBreakdownCard = document.getElementById('visualizer-payroll-card');
+                const rowVisualizerRpp = document.getElementById('row-visualizer-employee-rpp');
+                const rowVisualizerRrsp = document.getElementById('row-visualizer-employer-rrsp');
 
                 if (rppSlider) {
                     rppSlider.value = 0;
@@ -1013,25 +1173,22 @@
                     document.getElementById('info-employer-rrsp-text').innerText = formatCurrency(0);
                 }
 
+                // Hide slider panels completely
+                if (rppSliderContainer) rppSliderContainer.classList.add('hidden');
+                if (rrspSliderContainer) rrspSliderContainer.classList.add('hidden');
+
                 // Hide CPP & EI rows in breakdown list as they are zeroed out
                 if (rowVisualizerCpp) rowVisualizerCpp.classList.add('hidden');
                 if (rowVisualizerEi) rowVisualizerEi.classList.add('hidden');
                 if (payrollBreakdownCard) payrollBreakdownCard.classList.add('hidden');
+                if (rowVisualizerRpp) rowVisualizerRpp.classList.add('hidden');
+                if (rowVisualizerRrsp) rowVisualizerRrsp.classList.add('hidden');
 
-                showToast("Retired Member Status Enabled: Pension deductions (RPP, RRSP, CPP, EI) set to $0.00.");
+                updateSliderDirection(true);
+                showToast("Retired Member Status Enabled: Decumulation rules activated. Deductions minimized.");
             } else {
-                // Unlock sliders
-                if (rppSlider) rppSlider.disabled = false;
-                if (rrspSlider) rrspSlider.disabled = false;
-
-                // Restore breakdown elements visibility
-                if (rowVisualizerCpp) rowVisualizerCpp.classList.remove('hidden');
-                if (rowVisualizerEi) rowVisualizerEi.classList.remove('hidden');
-                if (payrollBreakdownCard) payrollBreakdownCard.classList.remove('hidden');
-
-                // Re-evaluate matching sliders limits based on current income
-                onIncomeChange(info_income);
-                showToast("Retired Member Status Disabled: Standard deduction schedules restored.");
+                // If user unchecks retired, force active to true
+                toggleActiveMemberStatus(true);
             }
             updateTaxInfographicUI();
         }
@@ -1113,7 +1270,8 @@
 
         // Calculation Pipeline Core
         function runTaxCalculationScenario(scenIncome, scenEmployeeRPP, scenEmployerRRSP) {
-            const netTaxableIncome = Math.max(0, scenIncome - scenEmployeeRPP);
+            // Deduct both Employee RPP and Employer RRSP from gross taxable income
+            const netTaxableIncome = Math.max(0, scenIncome - scenEmployeeRPP - scenEmployerRRSP);
 
             // CPP/CPP2 and EI calculations: Instantly set to 0 if Retired Member Status is enabled
             let cpp1 = 0;
@@ -1175,7 +1333,6 @@
             });
 
             // Federal non-refundable tax credits
-            // Note: If retired, CPP & EI are 0, so they naturally do not contribute to non-refundable credits.
             const federalCredits = (fedBpa + totalEi + totalCpp) * 0.15;
             const finalFedTax = Math.max(0, cumulativeFedTax - federalCredits);
 
@@ -1275,7 +1432,7 @@
             const savingsCard = document.getElementById('info-tax-savings-card');
             const savingsVal = document.getElementById('info-val-tax-savings');
             if (savingsCard && savingsVal) {
-                if (info_employee_rpp > 0 && taxSavings > 0 && !isRetiredMember) {
+                if ((info_employee_rpp > 0 || info_employer_rrsp > 0) && taxSavings > 0 && !isRetiredMember) {
                     savingsCard.classList.remove('hidden');
                     savingsVal.innerText = formatCurrency(taxSavings);
                 } else {
@@ -1316,7 +1473,7 @@
             if (eiVal) eiVal.innerText = formatCurrency(actual.totalEi);
             if (eiPct) eiPct.innerText = totalComp > 0 ? ((actual.totalEi / totalComp) * 100).toFixed(2) + '%' : '0.00%';
 
-            // Total combined deductions/outflows
+            // Total combined deductions
             const totalDed = document.getElementById('info-val-total-deductions');
             if (totalDed) totalDed.innerText = formatCurrency(actual.finalFedTax + actual.finalBcTax + actual.totalCpp + actual.totalEi + info_employee_rpp);
 
@@ -1349,13 +1506,13 @@
                 bracketsContainer.innerHTML = '';
 
                 const currentActiveBrackets = info_activeTab === 'federal' ? actual.fedTaxByBracket : actual.bcTaxByBracket;
-                const accentBorderClass = info_activeTab === 'federal' ? 'border-indigo-200 bg-indigo-50/40' : 'border-sky-200 bg-sky-50/40';
+                const accentBorderClass = info_activeTab === 'federal' ? 'border-indigo-200 bg-indigo-50/40 shadow-sm' : 'border-sky-200 bg-sky-50/40 shadow-sm';
                 const accentBarClass = info_activeTab === 'federal' ? 'bg-indigo-600' : 'bg-sky-600';
                 const activeTextBadge = info_activeTab === 'federal' ? 'bg-indigo-100 text-indigo-700 border border-indigo-200' : 'bg-sky-100 text-sky-700 border border-sky-200';
 
                 currentActiveBrackets.forEach((b) => {
                     const limitText = b.max === Infinity ? 'No Limit' : formatCurrency(b.max);
-                    const netTaxableIncome = Math.max(0, info_income - info_employee_rpp);
+                    const netTaxableIncome = Math.max(0, info_income - info_employee_rpp - info_employer_rrsp);
                     const pctFilled = b.max === Infinity 
                         ? (netTaxableIncome > b.min ? 100 : 0)
                         : Math.min(100, Math.max(0, ((netTaxableIncome - b.min) / (b.max - b.min)) * 100));
@@ -1523,7 +1680,7 @@
                 'metric-card-oas': {
                     tab: 'cpp',
                     activeCard: 'bg-emerald-100/95 border-emerald-600 ring-4 ring-emerald-500/20 shadow-md border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full',
-                    inactiveCard: 'bg-emerald-50/80 border-emerald-350 hover:border-emerald-500 hover:bg-emerald-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm',
+                    inactiveCard: 'bg-emerald-50/80 border-emerald-300 hover:border-emerald-500 hover:bg-emerald-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm',
                     activeBadge: 'text-[8px] font-black tracking-wider bg-emerald-600 text-white border border-emerald-700 px-2 py-0.5 rounded-full uppercase transition-all duration-300 shrink-0',
                     inactiveBadge: 'text-[8px] font-black tracking-wider text-emerald-800 bg-emerald-100 border border-emerald-200 px-2 py-0.5 rounded-full uppercase group-hover:bg-emerald-200 group-hover:text-emerald-900 transition-all duration-300 shrink-0',
                     activeBar: 'absolute bottom-0 left-0 right-0 h-1 bg-emerald-500 transform scale-x-100 transition-transform duration-300',
@@ -1541,7 +1698,7 @@
                 'metric-card-rrsp': {
                     tab: 'tax-infographic',
                     activeCard: 'bg-teal-100/95 border-teal-600 ring-4 ring-teal-500/20 shadow-md border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full',
-                    inactiveCard: 'bg-teal-50/80 border-teal-355 hover:border-teal-500 hover:bg-teal-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm',
+                    inactiveCard: 'bg-teal-50/80 border-teal-350 hover:border-teal-500 hover:bg-teal-100/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-2 p-2.5 rounded-xl cursor-pointer text-left relative overflow-hidden group flex items-center justify-between min-h-[72px] w-full shadow-sm',
                     activeBadge: 'text-[8px] font-black tracking-wider bg-teal-600 text-white border border-teal-700 px-2 py-0.5 rounded-full uppercase transition-all duration-300 shrink-0',
                     inactiveBadge: 'text-[8px] font-black tracking-wider text-teal-800 bg-teal-100 border border-teal-200 px-2 py-0.5 rounded-full uppercase group-hover:bg-emerald-200 group-hover:text-emerald-900 transition-all duration-300 shrink-0',
                     activeBar: 'absolute bottom-0 left-0 right-0 h-1 bg-teal-500 transform scale-x-100 transition-transform duration-300',
